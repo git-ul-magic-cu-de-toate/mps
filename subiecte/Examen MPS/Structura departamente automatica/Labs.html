@@ -1,0 +1,1263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0041)https://cs.pub.ro/index.php/research/labs -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr" slick-uniqueid="3" wtx-context="48B66392-A815-491A-9A72-2F7452B062B6"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!--<base href="https://cs.pub.ro/index.php/research/labs">--><base href=".">
+	
+	<meta name="author" content="Super User">
+	<meta name="description" content="-">
+	<meta name="generator" content="Joomla! - Open Source Content Management">
+	<title>Labs</title>
+	<link href="https://cs.pub.ro/index.php/research/labs" rel="canonical">
+	<link href="https://cs.pub.ro/templates/jsn_epic_free/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+	<link href="./Labs_files/select2.css" rel="stylesheet" type="text/css">
+	<link href="./Labs_files/flexicontent.css" rel="stylesheet" type="text/css">
+	<link href="./Labs_files/category.css" rel="stylesheet" type="text/css">
+	<link href="./Labs_files/style.css" rel="stylesheet" type="text/css">
+	<link href="./Labs_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="./Labs_files/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+	<link href="./Labs_files/bootstrap-extended.css" rel="stylesheet" type="text/css">
+	<link href="./Labs_files/system.css" rel="stylesheet" type="text/css">
+	<link href="./Labs_files/general.css" rel="stylesheet" type="text/css">
+	<link href="./Labs_files/template.css" rel="stylesheet" type="text/css">
+	<link href="./Labs_files/template_blue.css" rel="stylesheet" type="text/css">
+	<link href="./Labs_files/modal.css" rel="stylesheet" type="text/css">
+	<script type="application/json" class="joomla-script-options loaded">{"csrf.token":"d41d311a83b61040445e930f04106808","system.paths":{"root":"","base":""},"joomla.jtext":{"FLEXI_APPLYING_FILTERING":"Applying Filtering","FLEXI_TYPE_TO_LIST":"... type to list","FLEXI_TYPE_TO_FILTER":" ... type to filter"}}</script>
+	<script src="./Labs_files/mootools-core.js.descărcare" type="text/javascript"></script>
+	<script src="./Labs_files/core.js.descărcare" type="text/javascript"></script>
+	<script src="./Labs_files/mootools-more.js.descărcare" type="text/javascript"></script>
+	<script src="./Labs_files/jquery.min.js.descărcare" type="text/javascript"></script>
+	<script src="./Labs_files/jquery-noconflict.js.descărcare" type="text/javascript"></script>
+	<script src="./Labs_files/jquery-migrate.min.js.descărcare" type="text/javascript"></script>
+	<script src="./Labs_files/jquery.ui.core.min.js.descărcare" type="text/javascript"></script>
+	<script src="./Labs_files/jquery.ui.sortable.min.js.descărcare" type="text/javascript"></script>
+	<script src="./Labs_files/jquery.ui.autocomplete.min.js.descărcare" type="text/javascript"></script>
+	<script src="./Labs_files/select2.js.descărcare" type="text/javascript"></script>
+	<script src="./Labs_files/tmpl-common.js.descărcare" type="text/javascript"></script>
+	<script src="./Labs_files/bootstrap.min.js.descărcare" type="text/javascript"></script>
+	<script src="./Labs_files/jsn_noconflict.js.descărcare" type="text/javascript"></script>
+	<script src="./Labs_files/jsn_utils.js.descărcare" type="text/javascript"></script>
+	<script src="./Labs_files/jsn_template.js.descărcare" type="text/javascript"></script>
+	<script src="./Labs_files/modal.js.descărcare" type="text/javascript"></script>
+	<script type="text/javascript">
+jQuery(function($) {
+			 $('.hasTip').each(function() {
+				var title = $(this).attr('title');
+				if (title) {
+					var parts = title.split('::', 2);
+					var mtelement = document.id(this);
+					mtelement.store('tip:title', parts[0]);
+					mtelement.store('tip:text', parts[1]);
+				}
+			});
+			var JTooltips = new Tips($('.hasTip').get(), {"maxTitleChars": 50,"fixed": false});
+		});
+					jQuery(document).ready(function() {
+						
+						
+						jQuery('select.use_select2_lib').select2();
+						
+						jQuery('div.use_select2_lib').each(function() {
+							var el_container = jQuery(this);
+							var el_select = el_container.next('select');
+							
+							
+							var fc_label_text = el_select.attr('fc_label_text');
+							if (fc_label_text) {
+								var _label = (fc_label_text.length >= 30) ? fc_label_text.substring(0, 28) + '...' : fc_label_text;
+								
+								jQuery('<span/>', {
+									'class': 'fc_has_inner_label fc_has_inner_label_select2',
+									'text': _label
+								}).prependTo(el_container.find('.select2-search-field'));
+							}
+							
+							
+							var fc_prompt_text = el_select.attr('fc_prompt_text');
+							if (fc_prompt_text) {
+								var _prompt = (fc_prompt_text.length >= 30) ? fc_prompt_text.substring(0, 28) + '...' : fc_prompt_text;
+								
+								jQuery('<span/>', {
+									'class': 'fc_has_inner_prompt fc_has_inner_prompt_select2',
+									'text': _prompt
+								}).prependTo(el_container.find('.select2-search-field')).hide();
+							}
+							
+							
+							if ( ! el_select.attr('multiple') ) {
+								var el = el_container.find('.select2-choice');
+								var val = el_select.val();
+								if (val === null) {
+									el.addClass('fc_highlight_disabled');
+								} else if (val.length) {
+									el.addClass('fc_highlight');
+								} else {
+									el.removeClass('fc_highlight');
+								}
+							}
+						});
+						
+						
+						jQuery('select.use_select2_lib').on('open', function() {
+							
+							var el_container = jQuery(this).parent();
+							var el = jQuery(this).parent().find('.select2-input');
+							var el_label = el.prevAll('.fc_has_inner_label');
+							if (el_label) el_label.hide();
+							var el_prompt = el.prevAll('.fc_has_inner_prompt');
+							if (el_prompt) el_prompt.show();
+							
+							
+							if (jQuery(this).hasClass('select2_list_selected')) {
+								var els = jQuery('#select2-drop').find('.select2-selected');
+								els.addClass('select2-selected-highlight').addClass('select2-disabled').removeClass('select2-selected').removeClass('select2-result-selectable');
+							}
+						}).on('close', function() {
+							
+							var el_container = jQuery(this).parent();
+							var el = jQuery(this).parent().find('.select2-input');
+							var el_label = el.prevAll('.fc_has_inner_label');
+							if (el_label) el_label.show();
+							var el_prompt = el.prevAll('.fc_has_inner_prompt');
+							if (el_prompt) el_prompt.hide();
+							
+							
+							if (jQuery(this).hasClass('select2_list_selected')) {
+								var els = jQuery('#select2-drop').find('.select2-selected-highlight');
+								els.removeClass('select2-selected-highlight').removeClass('select2-disabled').addClass('select2-result-selectable');
+							}
+						}).on
+						
+						
+						('change', function() {
+							var el_select = jQuery(this);
+							if ( ! el_select.attr('multiple') ) {
+								var el = jQuery(this).prev('div').find('.select2-choice');
+								var val = el_select.val();
+								if (val.length) {
+									el.addClass('fc_highlight');
+								} else {
+									el.removeClass('fc_highlight');
+								}
+							}
+						});
+						
+						
+						jQuery('div.use_select2_lib.select2-container-multi input').on('keydown', function() {
+							var el = jQuery(this);
+							setTimeout(function() {
+								if (el.val().length) {
+									var el_prompt = el.prevAll('.fc_has_inner_prompt');
+									if (el_prompt) el_prompt.hide();
+								} else {
+									var el_prompt = el.prevAll('.fc_has_inner_prompt');
+									if (el_prompt) el_prompt.show();
+								}
+							}, 0);
+						});
+						
+						
+						jQuery('select.use_select2_lib').on('loaded open', function() {
+							var ul = jQuery('#select2-drop ul.select2-results');
+							var needsScroll= ul.prop('scrollHeight') > ul.prop('clientHeight');
+							if (needsScroll) ul.css('overflow-y', 'scroll');
+							else  ul.css('overflow-y', 'auto');
+						});
+						
+					});
+				
+
+		jQuery(document).ready(function() {
+			jQuery("#adminForm input:not(.fc_autosubmit_exclude), #adminForm select:not(.fc_autosubmit_exclude)").on("change", function() {
+				var form=document.getElementById("adminForm");
+				adminFormPrepare(form, 1);
+			});
+		});
+	
+		jQuery(document).ready(function() {
+			jQuery("#adminForm .fc_button.button_reset").on("click", function() {
+				jQuery("#adminForm_filter_box .use_select2_lib").select2("val", "");
+			});
+		});
+	
+		var templateParams					= {};
+		templateParams.templatePrefix		= "JSN_Epic_FREE-";
+		templateParams.templatePath			= "/templates/jsn_epic_free";
+		templateParams.enableRTL			= false;
+
+		JSNTemplate.initTemplate(templateParams);
+
+		jQuery(function($) {
+			SqueezeBox.initialize({});
+			SqueezeBox.assign($('a.modal').get(), {
+				parse: 'rel'
+			});
+		});
+
+		window.jModalClose = function () {
+			SqueezeBox.close();
+		};
+		
+		// Add extra modal close functionality for tinyMCE-based editors
+		document.onreadystatechange = function () {
+			if (document.readyState == 'interactive' && typeof tinyMCE != 'undefined' && tinyMCE)
+			{
+				if (typeof window.jModalClose_no_tinyMCE === 'undefined')
+				{	
+					window.jModalClose_no_tinyMCE = typeof(jModalClose) == 'function'  ?  jModalClose  :  false;
+					
+					jModalClose = function () {
+						if (window.jModalClose_no_tinyMCE) window.jModalClose_no_tinyMCE.apply(this, arguments);
+						tinyMCE.activeEditor.windowManager.close();
+					};
+				}
+		
+				if (typeof window.SqueezeBoxClose_no_tinyMCE === 'undefined')
+				{
+					if (typeof(SqueezeBox) == 'undefined')  SqueezeBox = {};
+					window.SqueezeBoxClose_no_tinyMCE = typeof(SqueezeBox.close) == 'function'  ?  SqueezeBox.close  :  false;
+		
+					SqueezeBox.close = function () {
+						if (window.SqueezeBoxClose_no_tinyMCE)  window.SqueezeBoxClose_no_tinyMCE.apply(this, arguments);
+						tinyMCE.activeEditor.windowManager.close();
+					};
+				}
+			}
+		};
+		
+	</script>
+	<!--[if IE]><style type="text/css">.floattext {zoom:1;}</style><![endif]-->
+
+	
+	<!--[if IE 7]>
+	<link href="/templates/jsn_epic_free/css/jsn_fixie7.css" rel="stylesheet" type="text/css" />
+	<![endif]-->
+
+<style type="text/css">
+	#jsn-page {
+		width: 1150px;
+	}
+		
+	#jsn-pos-promo-left {
+		float: left;
+		width: 23%;
+		left: -100%;
+	}
+	#jsn-pos-promo {
+		width: 100%;
+		left: 0;
+	}
+	#jsn-pos-promo-right {
+		float: right;
+		width: 23%;
+	}
+	
+	#jsn-pos-promo-left {
+		left: auto;
+		display: auto;
+	}
+		
+	#jsn-content_inner2 {
+		left: 77%;
+	}
+	#jsn-content_inner3 {
+		right: 77%;
+	}
+		
+	#jsn-leftsidecontent {
+		float: left;
+		width: 23%;
+		left: -77%;
+	}
+	#jsn-maincontent {
+		float: left;
+		width: 77%;
+		left: 0;
+	}
+	#jsn-rightsidecontent {
+		float: right;
+		width: 23%;
+	}
+	
+	#jsn-pos-innerleft {
+		float: left;
+		width: 28%;
+		left: -100%;
+	}
+	#jsn-centercol {
+		float: left;
+		width: 100%;
+		left: 0;
+	}
+	#jsn-pos-innerright {
+		float: right;
+		width: 28%;
+	}
+	
+		body.jsn-textstyle-business {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		
+		body.jsn-textstyle-business h1,
+		body.jsn-textstyle-business h2,
+		body.jsn-textstyle-business h3,
+		body.jsn-textstyle-business h4,
+		body.jsn-textstyle-business h5,
+		body.jsn-textstyle-business h6,
+		body.jsn-textstyle-business #jsn-pos-mainmenu a,
+		body.jsn-textstyle-business #jsn-pos-mainmenu span,
+		body.jsn-textstyle-business .componentheading,
+		body.jsn-textstyle-business .contentheading {
+				font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+			}
+		
+		body.jsn-textstyle-business.jsn-textsize-medium {
+			font-size: 75%;
+		}
+	</style></head>
+<body id="jsn-master" class="jsn-textstyle-business jsn-textsize-medium jsn-color-blue jsn-direction-ltr jsn-joomla-39"><span id="fc_filter_form_blocker"><span class="fc_blocker_opacity"></span><span class="fc_blocker_content">Applying Filtering<div class="fc_blocker_bar"><div></div></div></span></span>
+	<div id="jsn-page">
+			<div id="jsn-pos-stick-righttop">
+			<div class=" jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><div class="jsn-modulecontent">
+<div>
+	<p><a class="link-tooltip" style="z-index: 90;" href="http://acs.pub.ro/" target="_blank"><img src="./Labs_files/LinkACS.png" alt="Facultatea de Auomatica si Calculatoare" width="120" height="120"><span style="left: -120px; top: -20px;"><img src="./Labs_files/LinkACS_text.png" alt="Facultatea de Auomatica si Calculatoare" width="240" height="250"></span></a></p></div><div class="clearbreak"></div></div></div></div>
+		</div>
+			<div id="jsn-pos-stick-rightbottom">
+			<div class=" jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><div class="jsn-modulecontent">
+<div>
+	<p><a href="http://www.upb.ro/" target="_blank"><span style="z-index: 90;"><img src="./Labs_files/LinkUPB.png" alt="See other templates" width="120" height="120"></span></a><a class="modal link-tooltip" href="http://www.upb.ro/" target="_blank"><span style="left: -90px; top: -260px;"><img src="./Labs_files/LinkUPB_text.png" alt="See other templates" width="200" height="200"></span></a></p></div><div class="clearbreak"></div></div></div></div>
+		</div>
+			<div id="jsn-header">
+			<div id="jsn-logo">
+			<a href="https://cs.pub.ro/index.php" title=""><img src="./Labs_files/logo.png" alt="" id="jsn-logo-desktop"></a>			</div>
+			<div id="jsn-headerright">
+							<div id="jsn-pos-top">
+					<div class=" jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><div class="jsn-modulecontent"><div class="clearbreak"></div></div></div></div>
+					<div class="clearbreak"></div>
+				</div>
+						</div>
+			<div class="clearbreak"></div>
+		</div>
+		<div id="jsn-body">
+					<div id="jsn-menu">
+							<div id="jsn-pos-mainmenu">
+					<div class=" jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><div class="jsn-modulecontent">
+<ul class="menu-mainmenu">
+<li class="parent first"><a href="https://cs.pub.ro/index.php" title="Start here...">
+	<span>
+		<span class="jsn-menutitle">Home</span><span class="jsn-menudescription">Start here...</span>	</span>
+  </a><ul><li class="first"><a href="https://cs.pub.ro/index.php/home/about-us">
+	<span>
+		About	</span>
+  </a></li><li><a href="https://cs.pub.ro/index.php/home/history">
+	<span>
+		History &amp; Facts	</span>
+  </a></li><li><a href="https://cs.pub.ro/index.php/home/facilities">
+	<span>
+		Department Facilities	</span>
+  </a></li><li><a href="https://cs.pub.ro/index.php/home/life-in-the-department">
+	<span>
+		Life in the Department	</span>
+  </a></li><li class="last"><a href="https://cs.pub.ro/index.php/home/45th">
+	<span>
+		45th Anniversary Celebration	</span>
+  </a></li></ul></li><li class="parent"><a href="https://cs.pub.ro/index.php/people">
+	<span>
+		People	</span>
+  </a><ul><li class="first">	<a href="https://cs.pub.ro/index.php/?option=com_comprofiler&amp;task=userslist&amp;listid=2">
+		<span>
+		Academics		</span>
+	</a>
+	</li><li>	<a href="https://cs.pub.ro/index.php/component/comprofiler/userslist/Professor%20Emeritus?Itemid=304">
+		<span>
+		Professor Emeritus		</span>
+	</a>
+	</li><li>	<a href="https://cs.pub.ro/index.php/?option=com_comprofiler&amp;task=userslist&amp;listid=5">
+		<span>
+		Research Associates		</span>
+	</a>
+	</li><li>	<a href="https://cs.pub.ro/index.php/?option=com_comprofiler&amp;task=userslist&amp;listid=6">
+		<span>
+		Tehnical Staff		</span>
+	</a>
+	</li><li>	<a href="https://cs.pub.ro/index.php/component/comprofiler/userslist/Former%20Academics?Itemid=305">
+		<span>
+		Former Academics		</span>
+	</a>
+	</li><li>	<a href="https://cs.pub.ro/index.php/?option=com_comprofiler&amp;task=userslist&amp;listid=9">
+		<span>
+		Former Members		</span>
+	</a>
+	</li><li class="last">	<a href="https://cs.pub.ro/index.php/?option=com_comprofiler&amp;task=userslist&amp;listid=8">
+		<span>
+		In Memoriam		</span>
+	</a>
+	</li></ul></li><li class="parent">		<a class="" href="http://acs.pub.ro/admitere/viitorii-studenti" target="_blank">
+			<span>
+			Admission			</span>
+		</a>
+<ul><li class="first">		<a class="" href="http://acs.pub.ro/admitere/licenta" target="_blank">
+			<span>
+			Undergraduate			</span>
+		</a>
+</li><li>		<a class="" href="http://acs.pub.ro/admitere/masterat" target="_blank">
+			<span>
+			Master			</span>
+		</a>
+</li><li class="last">		<a class="" href="http://acs.pub.ro/admitere/doctorat" target="_blank">
+			<span>
+			PhD			</span>
+		</a>
+</li></ul></li><li class="parent"><a href="https://cs.pub.ro/index.php/education">
+	<span>
+		Education	</span>
+  </a><ul><li class="first"><a href="https://cs.pub.ro/index.php/education/bachelor">
+	<span>
+		Undergraduate	</span>
+  </a></li><li><a href="https://cs.pub.ro/index.php/education/master">
+	<span>
+		Master	</span>
+  </a></li><li><a href="https://cs.pub.ro/index.php/education/phd">
+	<span>
+		PhD	</span>
+  </a></li><li><a href="https://cs.pub.ro/index.php/education/courses">
+	<span>
+		Courses	</span>
+  </a></li><li class="last">	<a href="https://upb.ro/wp-content/uploads/2017/11/STRUCTURA.2019-2020.Aprobat.Senat_.pdf">
+		<span>
+		Academic Calendar		</span>
+	</a>
+	</li></ul></li><li class="active parent"><a href="https://cs.pub.ro/index.php/research">
+	<span>
+		Research	</span>
+  </a><ul><li class="first"><a href="https://cs.pub.ro/index.php/research/publications">
+	<span>
+		Publications	</span>
+  </a></li><li><a href="https://cs.pub.ro/index.php/research/projects">
+	<span>
+		Projects	</span>
+  </a></li><li class="current active last"><a class="current" href="https://cs.pub.ro/index.php/research/labs">
+	<span>
+		Laboratories	</span>
+  </a></li></ul></li><li><a href="https://cs.pub.ro/index.php/partners">
+	<span>
+		Partners	</span>
+  </a></li><li><a href="https://cs.pub.ro/index.php/news">
+	<span>
+		News	</span>
+  </a></li><li class="parent"><a href="https://cs.pub.ro/index.php/contact">
+	<span>
+		Contact	</span>
+  </a><ul><li class="first"><a href="https://cs.pub.ro/index.php/contact/add">
+	<span>
+		Address	</span>
+  </a></li><li><a href="https://cs.pub.ro/index.php/contact/location">
+	<span>
+		Location	</span>
+  </a></li><li class="last"><a href="https://cs.pub.ro/index.php/contact/contactus">
+	<span>
+		Contact Us	</span>
+  </a></li></ul></li></ul><div class="clearbreak"></div></div></div></div>
+				</div>
+			            <div class="clearbreak"></div>
+			</div>
+					<div id="jsn-content" class="jsn-hasright ">
+				<div id="jsn-content_inner"><div id="jsn-content_inner1"><div id="jsn-content_inner2"><div id="jsn-content_inner3"><div id="jsn-content_inner4"><div id="jsn-content_inner5"><div id="jsn-content_inner6"><div id="jsn-content_inner7">
+					<div id="jsn-maincontent">
+						<div id="jsn-centercol">
+							<div id="jsn-centercol_inner">
+										<div id="jsn-mainbody-content">
+											<div id="jsn-mainbody">
+										<div id="system-message-container">
+	</div>
+
+										<div id="flexicontent" class="flexicontent  fccategory fccat83 menuitem249">
+
+<!-- BOF buttons -->
+		<p class="buttons">
+				<a href="https://cs.pub.ro/index.php/research/labs?pop=1&amp;tmpl=component" class="editlinktip hasTip" onclick="window.open(this.href,&#39;win2&#39;,&#39;status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no&#39;); return false;" title=""><img src="./Labs_files/printButton.png" alt="Print"></a>				<a href="https://cs.pub.ro/index.php/research/labs/83-laboratories?format=feed&amp;type=rss" class="editlinktip hasTip" onclick="window.open(this.href,&#39;win2&#39;,&#39;status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=800,height=600,directories=no,location=no&#39;); return false;" title=""><img src="./Labs_files/livemarks.png" alt="Feed Entries"></a>	</p>
+	<!-- EOF buttons -->
+
+<!-- BOF page title -->
+<!-- EOF page title -->
+
+<!-- BOF author description -->
+<!-- EOF author description -->
+
+
+<!-- BOF category info -->
+		<div class="fclear"></div>
+<div class="floattext">
+	
+		
+		<div class="catdescription">
+		<table style="width: 100%; height: 100%;" cellpadding="5">
+<tbody>
+<tr>
+<td style="height: 25px; text-align: center;" colspan="3"><strong><span style="font-size: 14pt; line-height: 115%; font-family: Verdana, sans-serif; background-position: initial initial; background-repeat: initial initial;">The National Center for Information Technology</span></strong></td>
+</tr>
+<tr>
+<td style="width: 25%; text-align: center;" scope="row"><img src="./Labs_files/CNTI-2.jpg" alt="" width="221" height="229"></td>
+<td style="width: 52%; text-align: justify;" scope="row">The National Center for Information Technology (NCIT) is part of the University Politehnica of Bucharest and it is led by the Department of Computer Science and Engineering of the Automatics Control and Computers Faculty. The mission of the Center is to promote advanced and inter-disciplinary research activities, to develop new paradigms of collaboration between research scientists in ICT and other domains, to develop the human potential by programs available for the students of the Faculty of Automatic Control and Computers (Master and PhD level), and to offer the Romanian academic and industrial communities local and remote access to powerful computing resources. NCIT carries on research through national and international projects in collaboration with similar centers and institutions from Romania and abroad. It has established partnerships with high-tech companies for which it facilitates innovation and technological transfer.</td>
+<td style="width: 23%; text-align: center;" scope="row"><img src="./Labs_files/CNTI-1.jpg" alt="" width="200" height="229"></td>
+</tr>
+</tbody>
+</table>	</div>
+	</div>
+<!-- EOF category info -->
+	
+
+
+<!-- BOF item list display -->
+
+<div class="group">
+<form action="https://cs.pub.ro/index.php/research/labs" method="post" id="adminForm" onsubmit="" wtx-context="20E2DB3B-3F2D-472C-BB23-21718534D3AB">
+
+
+
+
+
+	<input type="hidden" name="option" value="com_flexicontent" wtx-context="11DD1FA7-3D18-44CA-B68E-6BC4C17FDD00">
+	<input type="hidden" name="filter_order" value="i.title" wtx-context="ABA96375-9B5F-4A79-8915-FB737404FC2C">
+	<input type="hidden" name="filter_order_Dir" value="" wtx-context="41F8ED06-35F8-4504-8C6F-69A774167B3C">
+	<input type="hidden" name="view" value="category" wtx-context="E78BEA4E-49E9-4473-8124-0C6F2AD8D623">
+	<input type="hidden" name="letter" value="" id="alpha_index" wtx-context="A02ADF21-209B-4F15-9748-04ED6AA926BA">
+	<input type="hidden" name="task" value="" wtx-context="84C81022-3804-491C-83C9-D657331BBF20">
+	<input type="hidden" name="cid" value="83" wtx-context="A8B96DA2-5059-48AD-B755-2CEDA00D9A72">
+	<input type="hidden" name="layout" value="" wtx-context="9A099783-C5E6-4BEF-9BF1-AF77F003BB92">
+</form></div>
+
+<div class="clear"></div>
+
+<div class="content group">
+
+
+	
+	<ul class="leadingblock group">
+				
+		<li id="fc_bloglist_item_0" class="fc_bloglist_item" style="overflow: hidden;">
+			
+			<!-- BOF beforeDisplayContent -->
+						<!-- EOF beforeDisplayContent -->
+			
+						
+																									
+							
+			
+													
+							<h2 class="contentheading"><span class="fc_item_title">
+										<a href="https://cs.pub.ro/index.php/research/labs/item/284-rdslab">Reconfigurable Digital Systems Laboratory</a>
+									</span></h2>
+				
+			
+			<!-- BOF afterDisplayTitle -->
+						<!-- EOF afterDisplayTitle -->
+
+			<span class="fc_mublock"></span>			
+							
+			<!-- BOF above-description-line1 block -->
+						<!-- EOF above-description-line1 block -->
+
+			<!-- BOF above-description-nolabel-line1 block -->
+						<!-- EOF above-description-nolabel-line1 block -->
+				
+			<!-- BOF above-description-line2 block -->
+						<!-- EOF above-description-line2 block -->
+				
+			<!-- BOF above-description-nolabel-line2 block -->
+						<div class="lineinfo line2">
+								<span class="element">
+					<span class="value field_hits">6273 views</span>
+				</span>
+							</div>
+						<!-- EOF above-description-nolabel-line2 block -->
+				
+			<div class="lineinfo image_descr">
+						<div class="image right">
+								<a href="https://cs.pub.ro/index.php/research/labs/item/284-rdslab" class="hasTip" title="">
+					<img src="./Labs_files/phpThumb_generated_thumbnailjpg" alt="Reconfigurable Digital Systems Laboratory">
+				</a>
+							</div>
+						<p>
+			 The main goal of the Reconfigurable Digital Systems Laboratory is promoting researches in reconfigurable hardware implementation of algorithms and other research areas related to hardware design. The latest technologies from worldwide leaders like Xilinx, Mentor Graphics or Synplicity are used in teaching ourselves and our students for the next technological wave. The Reconfigurable Digital Syste...			</p>
+			</div>
+
+			<!-- BOF under-description-line1 block -->
+						<!-- EOF under-description-line1 block -->
+				
+			<!-- BOF under-description-line1-nolabel block -->
+						<!-- EOF under-description-line1-nolabel block -->
+
+			<!-- BOF under-description-line2 block -->
+						<!-- EOF under-description-line2 block -->
+
+			<!-- BOF under-description-line2-nolabel block -->
+						<!-- EOF under-description-line2-nolabel block -->
+
+			
+
+						<span class="readmore group">
+								<a href="https://cs.pub.ro/index.php/research/labs/item/284-rdslab" class="readon">
+					 Read more...				</a>
+							</span>
+			
+			<!-- BOF afterDisplayContent -->
+						<!-- EOF afterDisplayContent -->
+			
+		</li>
+			</ul>
+
+
+
+	<ul class="introblock two group">	
+				
+		<li id="fc_bloglist_item_1" class="fc_bloglist_item fcodd fccol2" style="overflow: hidden;">
+			
+			<!-- BOF beforeDisplayContent -->
+						<!-- EOF beforeDisplayContent -->
+
+							
+								
+								
+													
+						
+			
+						
+														
+							<h2 class="contentheading"><span class="fc_item_title">
+										<a href="https://cs.pub.ro/index.php/research/labs/item/283-ciscoacademy">Cisco Academy</a>
+									</span></h2>
+							
+			<!-- BOF afterDisplayTitle -->
+						<!-- EOF afterDisplayTitle -->
+			
+			<span class="fc_mublock"></span>			
+							
+			<!-- BOF above-description-line1 block -->
+						<!-- EOF above-description-line1 block -->
+
+			<!-- BOF above-description-nolabel-line1 block -->
+						<!-- EOF above-description-nolabel-line1 block -->
+
+			<!-- BOF above-description-line2 block -->
+						<!-- EOF above-description-line2 block -->
+
+			<!-- BOF above-description-nolabel-line2 block -->
+						<div class="lineinfo line2">
+								<span class="element">
+					<span class="value field_hits">6143 views</span>
+				</span>
+							</div>
+						<!-- EOF above-description-nolabel-line2 block -->
+
+			<div class="lineinfo image_descr">
+						<div class="image right">
+									<a href="https://cs.pub.ro/index.php/research/labs/item/283-ciscoacademy" class="hasTip" title="">
+						<img src="./Labs_files/phpThumb_generated_thumbnailpng" alt="Cisco Academy">
+					</a>
+							</div>
+						<p>
+			 The laboratory houses the CISCO Academy , which organized and currently organizes certification courses for Cisco technology. Founded in 1999, this was the first institution of its kind in Romania an...			</p>
+			</div>
+
+			<!-- BOF under-description-line1 block -->
+						<!-- EOF under-description-line1 block -->
+
+			<!-- BOF under-description-line1-nolabel block -->
+						<!-- EOF under-description-line1-nolabel block -->
+
+			<!-- BOF under-description-line2 block -->
+						<!-- EOF under-description-line2 block -->
+
+			<!-- BOF under-description-line2-nolabel block -->
+						<!-- EOF under-description-line2-nolabel block -->
+
+
+			
+						<span class="readmore">
+								<a href="https://cs.pub.ro/index.php/research/labs/item/283-ciscoacademy" class="readon">
+				 Read more...				</a>
+							</span>
+							
+			<!-- BOF afterDisplayContent -->
+						<!-- EOF afterDisplayContent -->
+			
+		</li>
+				
+		<li id="fc_bloglist_item_2" class="fc_bloglist_item fceven fccol1" style="overflow: hidden;">
+			
+			<!-- BOF beforeDisplayContent -->
+						<!-- EOF beforeDisplayContent -->
+
+							
+								
+								
+													
+						
+			
+						
+														
+							<h2 class="contentheading"><span class="fc_item_title">
+										<a href="https://cs.pub.ro/index.php/research/labs/item/274-k-teams-computer-supported-collaborative-knowledge-construction-laboratory">K-Teams - Computer-Supported Collaborative Knowledge Construction Laboratory</a>
+									</span></h2>
+							
+			<!-- BOF afterDisplayTitle -->
+						<!-- EOF afterDisplayTitle -->
+			
+			<span class="fc_mublock"></span>			
+							
+			<!-- BOF above-description-line1 block -->
+						<!-- EOF above-description-line1 block -->
+
+			<!-- BOF above-description-nolabel-line1 block -->
+						<!-- EOF above-description-nolabel-line1 block -->
+
+			<!-- BOF above-description-line2 block -->
+						<!-- EOF above-description-line2 block -->
+
+			<!-- BOF above-description-nolabel-line2 block -->
+						<div class="lineinfo line2">
+								<span class="element">
+					<span class="value field_hits">7040 views</span>
+				</span>
+							</div>
+						<!-- EOF above-description-nolabel-line2 block -->
+
+			<div class="lineinfo image_descr">
+						<div class="image right">
+									<a href="https://cs.pub.ro/index.php/research/labs/item/274-k-teams-computer-supported-collaborative-knowledge-construction-laboratory" class="hasTip" title="">
+						<img src="./Labs_files/phpThumb_generated_thumbnailjpg(1)" alt="K-Teams - Computer-Supported Collaborative Knowledge Construction Laboratory">
+					</a>
+							</div>
+						<p>
+			 The aim of this research laboratory is the fundamental and applied research and development of software products (groupware) for supporting and analyzing work in virtual teams (Computer Supported Coo...			</p>
+			</div>
+
+			<!-- BOF under-description-line1 block -->
+						<!-- EOF under-description-line1 block -->
+
+			<!-- BOF under-description-line1-nolabel block -->
+						<!-- EOF under-description-line1-nolabel block -->
+
+			<!-- BOF under-description-line2 block -->
+						<!-- EOF under-description-line2 block -->
+
+			<!-- BOF under-description-line2-nolabel block -->
+						<!-- EOF under-description-line2-nolabel block -->
+
+
+			
+						<span class="readmore">
+								<a href="https://cs.pub.ro/index.php/research/labs/item/274-k-teams-computer-supported-collaborative-knowledge-construction-laboratory" class="readon">
+				 Read more...				</a>
+							</span>
+							
+			<!-- BOF afterDisplayContent -->
+						<!-- EOF afterDisplayContent -->
+			
+		</li>
+				
+		<li id="fc_bloglist_item_3" class="fc_bloglist_item fcodd fccol2" style="overflow: hidden;">
+			
+			<!-- BOF beforeDisplayContent -->
+						<!-- EOF beforeDisplayContent -->
+
+							
+								
+								
+													
+						
+			
+						
+														
+							<h2 class="contentheading"><span class="fc_item_title">
+										<a href="https://cs.pub.ro/index.php/research/labs/item/254-msinnovationcenter">Microsoft Innovation Center</a>
+									</span></h2>
+							
+			<!-- BOF afterDisplayTitle -->
+						<!-- EOF afterDisplayTitle -->
+			
+			<span class="fc_mublock"></span>			
+							
+			<!-- BOF above-description-line1 block -->
+						<!-- EOF above-description-line1 block -->
+
+			<!-- BOF above-description-nolabel-line1 block -->
+						<!-- EOF above-description-nolabel-line1 block -->
+
+			<!-- BOF above-description-line2 block -->
+						<!-- EOF above-description-line2 block -->
+
+			<!-- BOF above-description-nolabel-line2 block -->
+						<div class="lineinfo line2">
+								<span class="element">
+					<span class="value field_hits">6581 views</span>
+				</span>
+							</div>
+						<!-- EOF above-description-nolabel-line2 block -->
+
+			<div class="lineinfo image_descr">
+						<div class="image right">
+									<a href="https://cs.pub.ro/index.php/research/labs/item/254-msinnovationcenter" class="hasTip" title="">
+						<img src="./Labs_files/phpThumb_generated_thumbnailpng(1)" alt="Microsoft Innovation Center">
+					</a>
+							</div>
+						<p>
+			 Starting April 24, 2008, the laboratory was renamed to Microsoft Innovation Center . The laboratory includes 26 last-generation Lenovo workstations, with include Core 2 Duo processors and 4 GB of RAM...			</p>
+			</div>
+
+			<!-- BOF under-description-line1 block -->
+						<!-- EOF under-description-line1 block -->
+
+			<!-- BOF under-description-line1-nolabel block -->
+						<!-- EOF under-description-line1-nolabel block -->
+
+			<!-- BOF under-description-line2 block -->
+						<!-- EOF under-description-line2 block -->
+
+			<!-- BOF under-description-line2-nolabel block -->
+						<!-- EOF under-description-line2-nolabel block -->
+
+
+			
+						<span class="readmore">
+								<a href="https://cs.pub.ro/index.php/research/labs/item/254-msinnovationcenter" class="readon">
+				 Read more...				</a>
+							</span>
+							
+			<!-- BOF afterDisplayContent -->
+						<!-- EOF afterDisplayContent -->
+			
+		</li>
+				
+		<li id="fc_bloglist_item_4" class="fc_bloglist_item fceven fccol1" style="overflow: hidden;">
+			
+			<!-- BOF beforeDisplayContent -->
+						<!-- EOF beforeDisplayContent -->
+
+							
+								
+								
+													
+						
+			
+						
+														
+							<h2 class="contentheading"><span class="fc_item_title">
+										<a href="https://cs.pub.ro/index.php/research/labs/item/248-ebussines-egovernment-lab">eBussines and eGovernment</a>
+									</span></h2>
+							
+			<!-- BOF afterDisplayTitle -->
+						<!-- EOF afterDisplayTitle -->
+			
+			<span class="fc_mublock"></span>			
+							
+			<!-- BOF above-description-line1 block -->
+						<!-- EOF above-description-line1 block -->
+
+			<!-- BOF above-description-nolabel-line1 block -->
+						<!-- EOF above-description-nolabel-line1 block -->
+
+			<!-- BOF above-description-line2 block -->
+						<!-- EOF above-description-line2 block -->
+
+			<!-- BOF above-description-nolabel-line2 block -->
+						<div class="lineinfo line2">
+								<span class="element">
+					<span class="value field_hits">5687 views</span>
+				</span>
+							</div>
+						<!-- EOF above-description-nolabel-line2 block -->
+
+			<div class="lineinfo image_descr">
+						<div class="image right">
+									<a href="https://cs.pub.ro/index.php/research/labs/item/248-ebussines-egovernment-lab" class="hasTip" title="">
+						<img src="./Labs_files/phpThumb_generated_thumbnailjpg(2)" alt="eBussines and eGovernment">
+					</a>
+							</div>
+						<p>
+			 The eBussines and eGovernment laboratories are dedicated to research, development and learning activities in the field of e-services, particularly e-business, e-government, e-learning and m-servicii....			</p>
+			</div>
+
+			<!-- BOF under-description-line1 block -->
+						<!-- EOF under-description-line1 block -->
+
+			<!-- BOF under-description-line1-nolabel block -->
+						<!-- EOF under-description-line1-nolabel block -->
+
+			<!-- BOF under-description-line2 block -->
+						<!-- EOF under-description-line2 block -->
+
+			<!-- BOF under-description-line2-nolabel block -->
+						<!-- EOF under-description-line2-nolabel block -->
+
+
+			
+						<span class="readmore">
+								<a href="https://cs.pub.ro/index.php/research/labs/item/248-ebussines-egovernment-lab" class="readon">
+				 Read more...				</a>
+							</span>
+							
+			<!-- BOF afterDisplayContent -->
+						<!-- EOF afterDisplayContent -->
+			
+		</li>
+				
+		<li id="fc_bloglist_item_5" class="fc_bloglist_item fcodd fccol2" style="overflow: hidden;">
+			
+			<!-- BOF beforeDisplayContent -->
+						<!-- EOF beforeDisplayContent -->
+
+							
+								
+								
+													
+						
+			
+						
+														
+							<h2 class="contentheading"><span class="fc_item_title">
+										<a href="https://cs.pub.ro/index.php/research/labs/item/236-hpccluster">High Performance Computing Center</a>
+									</span></h2>
+							
+			<!-- BOF afterDisplayTitle -->
+						<!-- EOF afterDisplayTitle -->
+			
+			<span class="fc_mublock"></span>			
+							
+			<!-- BOF above-description-line1 block -->
+						<!-- EOF above-description-line1 block -->
+
+			<!-- BOF above-description-nolabel-line1 block -->
+						<!-- EOF above-description-nolabel-line1 block -->
+
+			<!-- BOF above-description-line2 block -->
+						<!-- EOF above-description-line2 block -->
+
+			<!-- BOF above-description-nolabel-line2 block -->
+						<div class="lineinfo line2">
+								<span class="element">
+					<span class="value field_hits">6422 views</span>
+				</span>
+							</div>
+						<!-- EOF above-description-nolabel-line2 block -->
+
+			<div class="lineinfo image_descr">
+						<div class="image right">
+									<a href="https://cs.pub.ro/index.php/research/labs/item/236-hpccluster" class="hasTip" title="">
+						<img src="./Labs_files/phpThumb_generated_thumbnailjpg(3)" alt="High Performance Computing Center">
+					</a>
+							</div>
+						<p>
+			 The High Performance Computing Center of the Computer Science Department from the Faculty for Automatic Control and Computers of the University Politehnica of Bucharest provides scientific researcher...			</p>
+			</div>
+
+			<!-- BOF under-description-line1 block -->
+						<!-- EOF under-description-line1 block -->
+
+			<!-- BOF under-description-line1-nolabel block -->
+						<!-- EOF under-description-line1-nolabel block -->
+
+			<!-- BOF under-description-line2 block -->
+						<!-- EOF under-description-line2 block -->
+
+			<!-- BOF under-description-line2-nolabel block -->
+						<!-- EOF under-description-line2-nolabel block -->
+
+
+			
+						<span class="readmore">
+								<a href="https://cs.pub.ro/index.php/research/labs/item/236-hpccluster" class="readon">
+				 Read more...				</a>
+							</span>
+							
+			<!-- BOF afterDisplayContent -->
+						<!-- EOF afterDisplayContent -->
+			
+		</li>
+				
+		<li id="fc_bloglist_item_6" class="fc_bloglist_item fceven fccol1" style="overflow: hidden;">
+			
+			<!-- BOF beforeDisplayContent -->
+						<!-- EOF beforeDisplayContent -->
+
+							
+								
+								
+													
+						
+			
+						
+														
+							<h2 class="contentheading"><span class="fc_item_title">
+										<a href="https://cs.pub.ro/index.php/research/labs/item/235-dslab">Distributed Systems Laboratory</a>
+									</span></h2>
+							
+			<!-- BOF afterDisplayTitle -->
+						<!-- EOF afterDisplayTitle -->
+			
+			<span class="fc_mublock"></span>			
+							
+			<!-- BOF above-description-line1 block -->
+						<!-- EOF above-description-line1 block -->
+
+			<!-- BOF above-description-nolabel-line1 block -->
+						<!-- EOF above-description-nolabel-line1 block -->
+
+			<!-- BOF above-description-line2 block -->
+						<!-- EOF above-description-line2 block -->
+
+			<!-- BOF above-description-nolabel-line2 block -->
+						<div class="lineinfo line2">
+								<span class="element">
+					<span class="value field_hits">11789 views</span>
+				</span>
+							</div>
+						<!-- EOF above-description-nolabel-line2 block -->
+
+			<div class="lineinfo image_descr">
+						<div class="image right">
+									<a href="https://cs.pub.ro/index.php/research/labs/item/235-dslab" class="hasTip" title="">
+						<img src="./Labs_files/phpThumb_generated_thumbnailpng(2)" alt="Distributed Systems Laboratory">
+					</a>
+							</div>
+						<p>
+			 The Distributed Systems Laboratory hosts a series of successful activities and projects, recognized worldwide, within a collaboration between California Institute of Technology, in U.S., European Org...			</p>
+			</div>
+
+			<!-- BOF under-description-line1 block -->
+						<!-- EOF under-description-line1 block -->
+
+			<!-- BOF under-description-line1-nolabel block -->
+						<!-- EOF under-description-line1-nolabel block -->
+
+			<!-- BOF under-description-line2 block -->
+						<!-- EOF under-description-line2 block -->
+
+			<!-- BOF under-description-line2-nolabel block -->
+						<!-- EOF under-description-line2-nolabel block -->
+
+
+			
+						<span class="readmore">
+								<a href="https://cs.pub.ro/index.php/research/labs/item/235-dslab" class="readon">
+				 Read more...				</a>
+							</span>
+							
+			<!-- BOF afterDisplayContent -->
+						<!-- EOF afterDisplayContent -->
+			
+		</li>
+				
+		<li id="fc_bloglist_item_7" class="fc_bloglist_item fcodd fccol2" style="overflow: hidden;">
+			
+			<!-- BOF beforeDisplayContent -->
+						<!-- EOF beforeDisplayContent -->
+
+							
+								
+								
+													
+						
+			
+						
+														
+							<h2 class="contentheading"><span class="fc_item_title">
+										<a href="https://cs.pub.ro/index.php/research/labs/item/234-aimas">Laboratory of Artificial Intelligence and Multi-Agent Systems</a>
+									</span></h2>
+							
+			<!-- BOF afterDisplayTitle -->
+						<!-- EOF afterDisplayTitle -->
+			
+			<span class="fc_mublock"></span>			
+							
+			<!-- BOF above-description-line1 block -->
+						<!-- EOF above-description-line1 block -->
+
+			<!-- BOF above-description-nolabel-line1 block -->
+						<!-- EOF above-description-nolabel-line1 block -->
+
+			<!-- BOF above-description-line2 block -->
+						<!-- EOF above-description-line2 block -->
+
+			<!-- BOF above-description-nolabel-line2 block -->
+						<div class="lineinfo line2">
+								<span class="element">
+					<span class="value field_hits">6895 views</span>
+				</span>
+							</div>
+						<!-- EOF above-description-nolabel-line2 block -->
+
+			<div class="lineinfo image_descr">
+						<div class="image right">
+									<a href="https://cs.pub.ro/index.php/research/labs/item/234-aimas" class="hasTip" title="">
+						<img src="./Labs_files/phpThumb_generated_thumbnailpng(3)" alt="Laboratory of Artificial Intelligence and Multi-Agent Systems">
+					</a>
+							</div>
+						<p>
+			 At the Laboratory of Artificial Intelligence and Multi-Agent Systems our research is focused on the development of models and architectures for single- and multi-agent systems endowed with artificial...			</p>
+			</div>
+
+			<!-- BOF under-description-line1 block -->
+						<!-- EOF under-description-line1 block -->
+
+			<!-- BOF under-description-line1-nolabel block -->
+						<!-- EOF under-description-line1-nolabel block -->
+
+			<!-- BOF under-description-line2 block -->
+						<!-- EOF under-description-line2 block -->
+
+			<!-- BOF under-description-line2-nolabel block -->
+						<!-- EOF under-description-line2-nolabel block -->
+
+
+			
+						<span class="readmore">
+								<a href="https://cs.pub.ro/index.php/research/labs/item/234-aimas" class="readon">
+				 Read more...				</a>
+							</span>
+							
+			<!-- BOF afterDisplayContent -->
+						<!-- EOF afterDisplayContent -->
+			
+		</li>
+				
+		<li id="fc_bloglist_item_8" class="fc_bloglist_item fceven fccol1" style="overflow: hidden;">
+			
+			<!-- BOF beforeDisplayContent -->
+						<!-- EOF beforeDisplayContent -->
+
+							
+								
+								
+													
+						
+			
+						
+														
+							<h2 class="contentheading"><span class="fc_item_title">
+										<a href="https://cs.pub.ro/index.php/research/labs/item/233-eslab">Embedded Systems Laboratory</a>
+									</span></h2>
+							
+			<!-- BOF afterDisplayTitle -->
+						<!-- EOF afterDisplayTitle -->
+			
+			<span class="fc_mublock"></span>			
+							
+			<!-- BOF above-description-line1 block -->
+						<!-- EOF above-description-line1 block -->
+
+			<!-- BOF above-description-nolabel-line1 block -->
+						<!-- EOF above-description-nolabel-line1 block -->
+
+			<!-- BOF above-description-line2 block -->
+						<!-- EOF above-description-line2 block -->
+
+			<!-- BOF above-description-nolabel-line2 block -->
+						<div class="lineinfo line2">
+								<span class="element">
+					<span class="value field_hits">6673 views</span>
+				</span>
+							</div>
+						<!-- EOF above-description-nolabel-line2 block -->
+
+			<div class="lineinfo image_descr">
+						<div class="image right">
+									<a href="https://cs.pub.ro/index.php/research/labs/item/233-eslab" class="hasTip" title="">
+						<img src="./Labs_files/phpThumb_generated_thumbnailjpg(4)" alt="Embedded Systems Laboratory">
+					</a>
+							</div>
+						<p>
+			 The Embedded Systems Laboratory from the University POLITEHNICA of Bucharest is one of the main research, teaching, and community development nuclei&nbsp;of the Faculty of Automatic Control and Computers....			</p>
+			</div>
+
+			<!-- BOF under-description-line1 block -->
+						<!-- EOF under-description-line1 block -->
+
+			<!-- BOF under-description-line1-nolabel block -->
+						<!-- EOF under-description-line1-nolabel block -->
+
+			<!-- BOF under-description-line2 block -->
+						<!-- EOF under-description-line2 block -->
+
+			<!-- BOF under-description-line2-nolabel block -->
+						<!-- EOF under-description-line2-nolabel block -->
+
+
+			
+						<span class="readmore">
+								<a href="https://cs.pub.ro/index.php/research/labs/item/233-eslab" class="readon">
+				 Read more...				</a>
+							</span>
+							
+			<!-- BOF afterDisplayContent -->
+						<!-- EOF afterDisplayContent -->
+			
+		</li>
+			</ul>
+	</div>
+
+<!-- BOF item list display -->
+
+<!-- BOF pagination -->
+	<div class="pagination">	
+	<div class="pageslinks">
+			</div>
+
+		<p class="pagescounter counter">
+			</p>
+		
+	</div><!-- EOF pagination -->
+
+</div>
+
+
+									</div>
+										</div>
+									</div>
+						</div>
+							<div class="clearbreak"></div></div>
+							<div id="jsn-rightsidecontent">
+						<div id="jsn-rightsidecontent_inner">
+							<div id="jsn-pos-right">
+								<div class=" jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><div><div><div class="jsn-modulecontent"><dl class="stats-module">
+</dl>
+<div class="clearbreak"></div></div></div></div></div></div><div class="box-grey jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><div><div><h3 class="jsn-moduletitle"><span class="jsn-moduleicon">Research</span></h3><div class="jsn-modulecontent">
+<ul class="menu-treemenu">
+<li class="first"><a href="https://cs.pub.ro/index.php/research/publications">
+	<span>
+		Publications	</span>
+  </a></li><li><a href="https://cs.pub.ro/index.php/research/projects">
+	<span>
+		Projects	</span>
+  </a></li><li class="current active last"><a class="current" href="https://cs.pub.ro/index.php/research/labs">
+	<span>
+		Laboratories	</span>
+  </a></li></ul><div class="clearbreak"></div></div></div></div></div></div><div class=" jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><div><div><div class="jsn-modulecontent"><form action="https://cs.pub.ro/index.php/component/comprofiler/login" method="post" id="login-form" class="cbLoginForm" style="margin:0px;" wtx-context="07A22E20-1BA8-4C27-85CC-7BCF51F521C0">
+<fieldset class="userdata"><p id="form-login-username"><span id="mod_login_usernametext"><label for="mod_login_username">Username</label></span><span><input type="text" name="username" id="mod_login_username" class="inputbox input-medium" size="14" wtx-context="D1736293-F60B-472C-9BB4-0500A43DF608"></span></p><p id="form-login-password"><span id="mod_login_passwordtext"><label for="mod_login_password">Password</label></span><span><input type="password" name="passwd" id="mod_login_password" class="inputbox input-medium" size="14" wtx-context="0DFA0EBB-0C53-4408-8277-2A65924C007C"></span></p><input type="hidden" name="op2" value="login" wtx-context="8C794ED5-43C5-49AC-A3B2-6C0A476EC057">
+<input type="hidden" name="lang" value="english" wtx-context="3BBDE83A-9C20-4FA2-82C7-495E431F3339">
+<input type="hidden" name="force_session" value="1" wtx-context="6AEB4302-5CB9-4CCE-8147-E17257BF5DD2">
+<input type="hidden" name="return" value="B:aHR0cHM6Ly9jcy5wdWIucm8vaW5kZXgucGhwL3Jlc2VhcmNoL2xhYnM=" wtx-context="5A697FEC-33A6-41C6-930F-65C2DCBD3487">
+<input type="hidden" name="message" value="0" wtx-context="79294464-322E-42EB-9712-37FA0EAB09C9">
+<input type="hidden" name="loginfrom" value="loginmodule" wtx-context="EA9C7CD5-9A6E-4F12-871D-BDA593720ACF">
+<input type="hidden" name="cbsecuritym3" value="cbm_0d24e4ad_4dde5909_b215f79427621d8e00245bab9dd1189d" wtx-context="53AE8A88-B65F-4A23-820A-D89CC7DC049B">
+<p id="form-login-remember"><span id="mod_login_remembermetext"><label for="mod_login_remember">Remember me</label></span><input type="checkbox" name="remember" id="mod_login_remember" value="yes" wtx-context="FE7036B9-4E8A-4B8A-87C6-DA2C0FE8CD1F"> </p><span class="cbLoginButtonSpan"><input type="submit" name="Submit" class="button" value="Login" wtx-context="E33C090C-AB05-432C-AFFF-6D94A701FB93"></span></fieldset></form><div class="clearbreak"></div></div></div></div></div></div>
+							</div>
+						</div>
+					</div>
+						<div class="clearbreak"></div></div></div></div></div></div></div></div></div>
+			</div>
+				</div>
+					<div id="jsn-footer">
+				<div id="jsn-footermodules" class="jsn-modulescontainer jsn-modulescontainer1">
+								<div id="jsn-pos-footer">
+						<div class=" jsn-modulecontainer"><div class="jsn-modulecontainer_inner"><div class="jsn-modulecontent"><div class="clearbreak"></div></div></div></div>
+					</div>
+								<div class="clearbreak"></div>
+				</div>
+			</div>
+			</div>
+	<div id="jsn-brand">
+		<a href="http://www.joomlashine.com/joomla-templates.html" title="Free business joomla templates by joomlashine.com" target="_blank"> Free business joomla templates</a>	</div>
+
+
+<div id="sbox-overlay" aria-hidden="true" tabindex="-1" style="z-index: 65555; opacity: 0;"></div><div id="sbox-window" role="dialog" aria-hidden="true" class="shadow" style="z-index: 65557;"><div id="sbox-content" style="opacity: 0;"></div><a id="sbox-btn-close" href="https://cs.pub.ro/index.php/research/labs#" role="button" aria-controls="sbox-window"></a></div></body></html>

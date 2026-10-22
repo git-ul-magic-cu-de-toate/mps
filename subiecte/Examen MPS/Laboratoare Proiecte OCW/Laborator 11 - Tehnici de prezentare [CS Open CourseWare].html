@@ -1,0 +1,537 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0058)https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-11 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr" wtx-context="79B1A973-51DE-4197-9298-E0E17AE637D1"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>
+    Laborator 11 - Tehnici de prezentare    [CS Open CourseWare]
+  </title>
+
+  <meta name="generator" content="DokuWiki">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2019-12-10T07:23:08+0200">
+<meta name="keywords" content="mps,laboratoare,laborator-11">
+<link rel="search" type="application/opensearchdescription+xml" href="https://ocw.cs.pub.ro/courses/lib/exe/opensearch.php" title="CS Open CourseWare">
+<link rel="start" href="https://ocw.cs.pub.ro/courses/">
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="https://ocw.cs.pub.ro/courses/feed.php">
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="https://ocw.cs.pub.ro/courses/feed.php?mode=list&amp;ns=mps:laboratoare">
+<link rel="alternate" type="text/html" title="Plain HTML" href="https://ocw.cs.pub.ro/courses/_export/xhtml/mps/laboratoare/laborator-11">
+<link rel="canonical" href="http://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-11">
+<link rel="stylesheet" type="text/css" href="./Laborator 11 - Tehnici de prezentare [CS Open CourseWare]_files/css.php">
+<script type="text/javascript">/*<![CDATA[*/var NS='mps:laboratoare';var JSINFO = {"id":"mps:laboratoare:laborator-11","namespace":"mps:laboratoare","isadmin":0,"isauth":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="./Laborator 11 - Tehnici de prezentare [CS Open CourseWare]_files/js.php"></script>
+<script type="text/x-mathjax-config;executed=true">/*<![CDATA[*/MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+        displayMath: [ ["$$","$$"], ["\\[","\\]"] ],
+        processEscapes: true
+    }
+});
+/*!]]>*/</script>
+<script src="./Laborator 11 - Tehnici de prezentare [CS Open CourseWare]_files/MathJax.js.descărcare" id=""></script>
+<script type="text/javascript">/*<![CDATA[*/
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		  
+/*!]]>*/</script><script src="./Laborator 11 - Tehnici de prezentare [CS Open CourseWare]_files/ga.js.descărcare" type="text/javascript"></script>
+<script type="text/javascript">/*<![CDATA[*/
+var pageTracker = _gat._getTracker("UA-38383934-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+		  
+/*!]]>*/</script>
+
+  <link rel="shortcut icon" href="https://ocw.cs.pub.ro/courses/lib/tpl/arctic/images/favicon.ico">
+
+  
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body><div id="MathJax_Message" style="display: none;"></div>
+<div id="wrapper" class="show">
+  <div class="dokuwiki">
+
+    
+    <div class="stylehead">
+      <div class="header">
+        <div class="pagename">
+          <a href="https://ocw.cs.pub.ro/courses/mps/"><img height="70" src="./Laborator 11 - Tehnici de prezentare [CS Open CourseWare]_files/sigla_mps.png"> </a>        </div>
+        <div class="logo">
+          <a style="color: #AAA !important;" href="https://ocw.cs.pub.ro/courses/">Open CourseWare</a>        </div>
+      </div>
+    
+       
+      <div class="breadcrumbs">
+              </div>
+      
+            </div>
+
+                  <div class="bar" id="bar__top">
+        <div class="bar-left">
+                  </div>
+        <div class="bar-right">
+          <a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-11?do=recent" class="action recent" accesskey="r" rel="nofollow" title="Recent changes [R]">Recent changes</a><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-11?do=login&amp;sectok=76ee6032b72b171266e4d13087d8f014" class="action login" rel="nofollow" title="Login">Login</a>        </div>
+    </div>
+        
+    
+    
+    
+              <div class="left_page">
+          
+<h1 class="sectionedit1" id="laborator_11_-_tehnici_de_prezentare">Laborator 11 - Tehnici de prezentare</h1>
+<div class="level1">
+
+</div>
+
+<h2 class="sectionedit2" id="prezentare_ppt_10_minute">Prezentare PPT  (10 minute)</h2>
+<div class="level2">
+
+<p>
+View <a href="http://www.slideshare.net/daniel_2r" class="urlextern" title="http://www.slideshare.net/daniel_2r" rel="nofollow">presentations from  Daniel Rosner</a>
+</p>
+
+</div>
+
+<h2 class="sectionedit3" id="brosuramateriale_promotionale">Broșură / materiale promoționale</h2>
+<div class="level2">
+
+<p>
+În timpul unei prezentări către client, <em>materialele de prezentare</em> costumizate relativ la produs și la client pot aduce un plus prezentării.
+Acestea denotă interes și atenție față de client și pot fi folosite pentru a transmite mai bine anumite informații și pentru a atrage atenția asupra avantajelor produsului.<br>
+<br>
+
+</p>
+
+</div>
+
+<h2 class="sectionedit4" id="impachetare_deployment_5_min">Împachetare, deployment (5 min)</h2>
+<div class="level2">
+
+<p>
+Cum un proiect nu poate fi livrat către client sub formă de proiect NetBeans / Visual / etc, clientului îi va fi oferit, în general, proiectul sub forma unui installer.
+</p>
+
+<p>
+Există diferite formate / metode de generare de installere, în funcție de sistemul de operare și de platforma software.
+</p>
+
+<p>
+În general, mediile vizuale de dezvoltare oferă posibilitatea de generare automată a unui installer pentru proiect, prin intermediul unui proiect de tip installer. (Exemplu: <a href="http://support.microsoft.com/kb/307353" class="urlextern" title="http://support.microsoft.com/kb/307353" rel="nofollow">http://support.microsoft.com/kb/307353</a> ).
+</p>
+
+<p>
+Exemplu de aplicație dedicată: <a href="http://sourceforge.net/projects/installgen/" class="urlextern" title="http://sourceforge.net/projects/installgen/" rel="nofollow">http://sourceforge.net/projects/installgen/</a>
+</p>
+
+</div>
+
+<h2 class="sectionedit5" id="scenariu_de_demo_5_min">Scenariu de demo (5 min)</h2>
+<div class="level2">
+
+<p>
+În cadrul unei prezentări, este foarte important pentru client să vadă rezultatul concret. Prezentările teoretice și promisiunile sunt foarte bune în stadiul incipient al proiectului, dar la finalizarea proiectului important este rezultatul.
+</p>
+
+<p>
+Pentru a putea demonstra clientului funcționalitatea produsului, se recomandă construirea unui scenariu de demo, care trece utilizarea programului printr-o serie de pași, accentuând funcționalitățile produsului.
+</p>
+
+<p>
+De asemenea, un scenariu de demo poate fi folositor și ca help guide. Există aplicații specializate în care pot fi realizate filme de prezentare pas cu pas a modului de funcționare a unui produs software și a modului de utilizare. 
+</p>
+
+<p>
+O astfel de aplicație este <a href="http://www.adobe.com/products/captivate/" class="urlextern" title="http://www.adobe.com/products/captivate/" rel="nofollow">http://www.adobe.com/products/captivate/</a>
+</p>
+
+<p>
+Aplicații open source:
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://camstudio.org/" class="urlextern" title="http://camstudio.org/" rel="nofollow">http://camstudio.org/</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://recordmydesktop.sourceforge.net/about.php" class="urlextern" title="http://recordmydesktop.sourceforge.net/about.php" rel="nofollow">http://recordmydesktop.sourceforge.net/about.php</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://xvidcap.sourceforge.net/" class="urlextern" title="http://xvidcap.sourceforge.net/" rel="nofollow">http://xvidcap.sourceforge.net/</a></div>
+</li>
+</ul>
+
+<p>
+Un exemplu de help file realizat folosind captivate (dummy-proof) : <a href="http://elf.cs.pub.ro/~mps/labs/lab-12/navigation.html" class="urlextern" title="http://elf.cs.pub.ro/~mps/labs/lab-12/navigation.html" rel="nofollow">http://elf.cs.pub.ro/~mps/labs/lab-12/navigation.html</a>
+</p>
+
+</div>
+
+<h2 class="sectionedit6" id="oferta_de_pret_5_min">Ofertă de preț (5 min)</h2>
+<div class="level2">
+
+<p>
+În cele mai multe cazuri, scopul final al unui proiect este unul comercial. Astfel, proiectul trebuie să fie oferit la vânzare contra unui cost, care trebuie să:
+</p>
+<ul>
+<li class="level1"><div class="li"> acopere costurile de realizare, care pot include:</div>
+<ul>
+<li class="level2"><div class="li"> cheltuieli cu personalul</div>
+</li>
+<li class="level2"><div class="li"> cheltuieli cu aparatura</div>
+</li>
+<li class="level2"><div class="li"> cheltuieli administrative</div>
+</li>
+<li class="level2"><div class="li"> licențe</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> acopere costurile de întreținere, upgrade, bug fix-ing pe o perioada de timp pentru care o să fie oferit suport către client</div>
+</li>
+<li class="level1"><div class="li"> evident, trebuie să existe și un profit în final</div>
+</li>
+</ul>
+
+<p>
+Există mai multe modele de vânzare, care depind și de natura proiectului:
+</p>
+<ul>
+<li class="level1"><div class="li"> dacă proiectul este realizat la comandă, cel mai probabil va fi vândut unui singur client și din banii obținuți de la acesta trebuie acoperite toate cheltuielile</div>
+<ul>
+<li class="level2"><div class="li"> contractul de vânzare poate include clauze de asigurare a mentenanței, training, bug-fixing, upgrading. Banii pentru aceste activități pot fi incluși, fie în suma inițială, fie într-o sumă periodică stabilită prin contract.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> dacă proiectul este unul general, care va fi vândut mai multor clienți:</div>
+<ul>
+<li class="level2"><div class="li"> se poate alege varianta cea mai des folosită - clientul cumpără inițial o licență, și primește softul, un anumit grad de suport bine definit, acces la bug-fixuri și upgrade-uri.</div>
+</li>
+<li class="level2"><div class="li"> în ultimul timp, a devenit din ce în ce mai populară varianta în care compania vinde servicii reprezentate de anumite acțiuni posibile folosind soft-ul dezvoltat (<strong>Software as a Service</strong>). O astfel de abordare se pretează foarte bine serviciilor online. </div>
+</li>
+<li class="level2"><div class="li"> o altă variantă este cea în care compania distribuie soft-ul gratuit, iar clientul plătește servicii de suport. Serviciile de suport pot reprezenta servicii de modificare a aplicației pentru nevoile clientului, pregătirea unui installer pentru mediul clientului, suport pentru instalare și pentru folosirea produsului, și alte variante în care clientul deși poate folosi soft-ul gratuit, trebuie să plătească.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit7" id="estimare_costuri_5_min">Estimare costuri (5 min)</h2>
+<div class="level2">
+
+<p>
+Un mod simplist de a realiza o estimare a costurilor ar fi următorul:
+</p>
+<div class="table sectionedit8"><table class="inline">
+	<tbody><tr class="row0">
+		<th class="col0 leftalign"> Ce      </th><th class="col1 leftalign"> Unitate        </th><th class="col2 leftalign"> Cantitate    </th><th class="col3 leftalign">Total    </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"> Dezvoltare    </td><td class="col1 leftalign"> 40RON/oră*om     </td><td class="col2 leftalign"> 500 ore*om        </td><td class="col3 rightalign">  20000 RON</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> Suport     </td><td class="col1"> 20RON/oră*om </td><td class="col2"> 200 ore*om</td><td class="col3">4000 RON </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> Bug fixing   </td><td class="col1 leftalign"> 20RON/oră*om     </td><td class="col2 leftalign"> 200 ore*om        </td><td class="col3 rightalign">  4000 RON</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> Costuri promovare   </td><td class="col1 centeralign">    -  </td><td class="col2 centeralign">   -      </td><td class="col3 rightalign">  4000 RON</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> Chirie   </td><td class="col1 leftalign"> 800RON/lună     </td><td class="col2 leftalign"> 2 luni        </td><td class="col3 rightalign">  1600 RON</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> Costuri administrative   </td><td class="col1 leftalign"> 800RON/lună     </td><td class="col2 leftalign"> 2 luni        </td><td class="col3 rightalign">  1600 RON</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 leftalign"> Rate (amorsare) echipamente   </td><td class="col1 leftalign"> 800RON/lună     </td><td class="col2 leftalign"> 2 luni        </td><td class="col3 rightalign">  1600 RON</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0 leftalign"> Rate (amorsare) licențe   </td><td class="col1 leftalign"> 800RON/lună     </td><td class="col2 leftalign"> 2 luni        </td><td class="col3 rightalign">  1600 RON</td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit9" id="exercitii">Exerciții</h2>
+<div class="level2">
+
+</div>
+
+<h3 class="sectionedit10" id="exercitiul_1prezentare_20_de_minute">Exercitiul 1: Prezentare (20 de minute)</h3>
+<div class="level3">
+
+<p>
+Parcurgeti una dintre aceste prezentari [1]. Ce parti bune/rele observati? Sustineti prezentarea aleasa.
+</p>
+
+<p>
+[1] <a href="https://drive.google.com/drive/folders/0B7WjsFvWhalPRV9VSWRmNEM2UG8?usp=sharing" class="urlextern" title="https://drive.google.com/drive/folders/0B7WjsFvWhalPRV9VSWRmNEM2UG8?usp=sharing" rel="nofollow">https://drive.google.com/drive/folders/0B7WjsFvWhalPRV9VSWRmNEM2UG8?usp=sharing</a>
+</p>
+
+</div>
+
+<h3 class="sectionedit11" id="exercitiul_2realizarea_unei_prezentari_40_de_minute">Exercitiul 2: Realizarea unei prezentari (40 de minute)</h3>
+<div class="level3">
+
+<p>
+Imaginați-vă că ar trebui să realizați acum o prezentare pentru unul din produsele urmatoare dezvoltate de echipa voastra:
+# <strong>Program pentru afișarea online a mersului trenurilor și achiziția online de bilete pentru o companie de cai ferate</strong>. Programul va include și interfețe pentru gestionarele de la ghișeele clasice de bilete.
+# <strong>Sistem de home-banking</strong> ce permite clienților să folosească servicii online cum ar fi: transfer bancar, schimb valutar, tipărirea de bilanțuri, autorizarea tranzacțiilor online.
+# <strong>Sistem de supraveghere a traficului dintr-o rețea</strong> destinat corporațiilor. Sistemul va permite prin intermediul unei interfețe grafice închiderea accesului la anumite servicii (yahoo, youtube) a căror utilizare în timpul programului de lucru de către angajați nu aduce un beneficiu companiei. De asemenea, va putea afișa și rapoarte despre activitatea web a fiecărui angajat.
+</p>
+
+<p>
+Scopul este ca aceasta prezentare sa convinga clientul sa achizitioneze produsul vostru. 
+Care este structura acestei prezentari? Ce elemente esentiale ar trebui sa contina? Imaginati-va ca ceilalti colegi ai vostri sunt reprezentantii companiei si prezentati-le cat mai atractiv produsul. 
+</p>
+
+</div>
+
+<h3 class="sectionedit12" id="exercitiul_3logo-uri_30_de_minute">Exercitiul 3: Logo-uri (30 de minute)</h3>
+<div class="level3">
+
+<p>
+Impartiti-va in doua echipe (sau in 3, conform impartirii proiectului 2).
+</p>
+
+<p>
+Din fiecare echipa, pe rand, se desemneaza cate un membru care se duce la tabla si deseneaza pentru echipa lui cate un logo din cele puse la dispozitie de catre asistent. Scopul este sa il recunoasca ceilalti membri (ca la mima, sau ca la jocul Activity).
+</p>
+
+</div>
+
+        </div>
+        <div class="right_sidebar">
+          <form action="https://ocw.cs.pub.ro/courses/start" accept-charset="utf-8" class="search" id="dw__search" method="get" wtx-context="FA4106B9-5439-4F74-8082-F4E20D8A9477"><div class="no"><input type="hidden" name="do" value="search" wtx-context="F076042C-78E5-41FA-8397-5FA738C88593"><input type="text" id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]" wtx-context="DACE00B3-098B-475A-8085-A0C26F8BEFFE"><input type="submit" value="Search" class="button" title="Search" wtx-context="4D6413EF-8EFD-4C72-8F7A-2361F050C7C6"><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>          <div class="namespace_sidebar sidebar_box">
+
+
+
+<div><div id="nojs_indexmenu_9200532985e2eefd978f5e" data-jsajax="%26skipfile%3D%252B/mps%253A%2528sidebar%257Cindex%2529/" class="indexmenu_nojs">
+
+<ul class="idx">
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/anunturi" class="wikilink1" title="mps:anunturi">Anunțuri</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/calendar" class="wikilink1" title="mps:calendar">Calendar</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/catalog" class="wikilink1" title="mps:catalog">Catalog</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/need-to-know" class="wikilink1" title="mps:need-to-know">MPS Need to Know</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/reguli" class="wikilink1" title="mps:reguli">Reguli generale și notare</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/semigrupe" class="wikilink1" title="mps:semigrupe">Semigrupe de laborator</a></div></li>
+</ul>
+</div></div>
+
+<h1 class="sectionedit1" id="resurse">Resurse</h1>
+<div class="level1">
+
+<div><div id="nojs_indexmenu_3499097395e2eefd97ad9e" data-jsajax="%26skipfile%3D%253D/home/" class="indexmenu_nojs">
+
+<ul class="idx">
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/resurse/acces-direct" class="wikilink1" title="mps:resurse:acces-direct">Acces direct</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/resurse/feed" class="wikilink1" title="mps:resurse:feed">Feed RSS</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/resurse/github" class="wikilink1" title="mps:resurse:github">Git și GitHub</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/resurse/sala" class="wikilink1" title="mps:resurse:sala">Sală de laborator</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/resurse/wiki-old" class="wikilink1" title="mps:resurse:wiki-old">Wiki-uri anterioare</a></div></li>
+</ul>
+</div></div>
+
+
+
+</div>
+<!-- EDIT1 SECTION "Resurse" [116-259] -->
+<h1 class="sectionedit2" id="laboratoare">Laboratoare</h1>
+<div class="level1">
+
+<div><div id="nojs_indexmenu_20200665335e2eefd97bd37" data-jsajax="%26skipfile%3D%253D/home/" class="indexmenu_nojs">
+
+<ul class="idx">
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-01" class="wikilink1" title="mps:laboratoare:laborator-01">Laborator 1 - Introducere</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-02" class="wikilink1" title="mps:laboratoare:laborator-02">Laborator 2 - Rolurile în echipă. Redactarea specificațiilor de proiect.</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-03" class="wikilink1" title="mps:laboratoare:laborator-03">Laborator 3 - Mijloace de organizare a proiectului. Controlul versiunii</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-04" class="wikilink1" title="mps:laboratoare:laborator-04">Laborator 4 - Utilitare pentru managementul și dezvoltarea proiectelor software</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-05" class="wikilink1" title="mps:laboratoare:laborator-05">Laborator 5 - Comunicarea în cadrul proiectului</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-06" class="wikilink1" title="mps:laboratoare:laborator-06">Laborator 6 - Monitorizarea, evaluarea și controlul evoluției proiectului</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-07" class="wikilink1" title="mps:laboratoare:laborator-07">Laborator 7 - Documentație. Patterns. Modele de dezvoltare</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-08" class="wikilink1" title="mps:laboratoare:laborator-08">Laborator 8 - Integrare</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09" class="wikilink1" title="mps:laboratoare:laborator-09">Laborator 9 - Testarea si asigurarea calitatii unui proiect</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-10" class="wikilink1" title="mps:laboratoare:laborator-10">Laborator 10 - Conducere, motivare, inteligență emoțională</a></div></li>
+<li class="level1"><div class="li"><span class="curid"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-11" class="wikilink1" title="mps:laboratoare:laborator-11">Laborator 11 - Tehnici de prezentare</a></span></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-12" class="wikilink1" title="mps:laboratoare:laborator-12">Laborator 12 - Laborator final</a></div></li>
+</ul>
+</div></div>
+
+</div>
+<!-- EDIT2 SECTION "Laboratoare" [260-336] -->
+<h1 class="sectionedit3" id="proiect">Proiect</h1>
+<div class="level1">
+
+<div><div id="nojs_indexmenu_5803112885e2eefd97ccd4" data-jsajax="%26skipfile%3D%253D/home%257Cimpartire-echipe/" class="indexmenu_nojs">
+
+<ul class="idx">
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/proiect/proiect-1" class="wikilink1" title="mps:proiect:proiect-1">Proiectul 1</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/proiect/proiect-2" class="wikilink1" title="mps:proiect:proiect-2">Proiectul 2</a></div></li>
+</ul>
+</div></div>
+
+</div>
+<!-- EDIT3 SECTION "Proiect" [337-] -->
+</div>
+<div class="toc_sidebar sidebar_box">
+<!-- TOC START -->
+<div id="sb__right__dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-11#laborator_11_-_tehnici_de_prezentare">Laborator 11 - Tehnici de prezentare</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-11#prezentare_ppt_10_minute">Prezentare PPT  (10 minute)</a></div></li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-11#brosuramateriale_promotionale">Broșură / materiale promoționale</a></div></li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-11#impachetare_deployment_5_min">Împachetare, deployment (5 min)</a></div></li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-11#scenariu_de_demo_5_min">Scenariu de demo (5 min)</a></div></li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-11#oferta_de_pret_5_min">Ofertă de preț (5 min)</a></div></li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-11#estimare_costuri_5_min">Estimare costuri (5 min)</a></div></li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-11#exercitii">Exerciții</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-11#exercitiul_1prezentare_20_de_minute">Exercitiul 1: Prezentare (20 de minute)</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-11#exercitiul_2realizarea_unei_prezentari_40_de_minute">Exercitiul 2: Realizarea unei prezentari (40 de minute)</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-11#exercitiul_3logo-uri_30_de_minute">Exercitiul 3: Logo-uri (30 de minute)</a></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+</div>
+        </div>
+      
+    
+      <div class="stylefoot">
+        <div class="meta">
+          <div class="user">
+                    </div>
+          <div class="doc">
+          mps/laboratoare/laborator-11.txt · Last modified: 2019/12/10 07:23 by iulia.stanica          </div>
+        </div>
+      </div>
+
+    <div class="clearer"></div>
+
+    
+                <div class="bar" id="bar__bottom">
+      <div class="bar-left">
+        <a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-11?do=revisions" class="action revs" accesskey="o" rel="nofollow" title="Old revisions [O]">Old revisions</a>      </div>
+      <div class="bar-right">
+        <a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-11?do=media&amp;ns=mps%3Alaboratoare" class="action media" rel="nofollow" title="Media Manager">Media Manager</a><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-11#dokuwiki__top" class="action top" accesskey="t" rel="nofollow" title="Back to top [T]">Back to top</a>      </div>
+    </div>
+    <div class="clearer"></div>
+            
+    <div align="center" class="footerinc">
+  <div class="license"><a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="./Laborator 11 - Tehnici de prezentare [CS Open CourseWare]_files/cc-by-sa.png" alt="CC Attribution-Share Alike 3.0 Unported"></a></div>
+  <a target="_blank" href="http://www.chimeric.de/" title="www.chimeric.de"><img src="./Laborator 11 - Tehnici de prezentare [CS Open CourseWare]_files/button-chimeric-de.png" width="80" height="15" alt="www.chimeric.de" border="0"></a>
+
+  <a target="_blank" href="http://jigsaw.w3.org/css-validator/check/referer" title="Valid CSS"><img src="./Laborator 11 - Tehnici de prezentare [CS Open CourseWare]_files/button-css.png" width="80" height="15" alt="Valid CSS" border="0"></a>
+
+  <a target="_blank" href="http://wiki.splitbrain.org/wiki:dokuwiki" title="Driven by DokuWiki"><img src="./Laborator 11 - Tehnici de prezentare [CS Open CourseWare]_files/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" border="0"></a>
+
+  <a target="_blank" href="http://www.firefox-browser.de/" title="do yourself a favour and use a real browser - get firefox"><img src="./Laborator 11 - Tehnici de prezentare [CS Open CourseWare]_files/button-firefox.png" width="80" height="15" alt="do yourself a favour and use a real browser - get firefox!!" border="0"></a>
+  
+  <a target="_blank" href="https://ocw.cs.pub.ro/courses/feed.php" title="Recent changes RSS feed"><img src="./Laborator 11 - Tehnici de prezentare [CS Open CourseWare]_files/button-rss.png" width="80" height="15" alt="Recent changes RSS feed" border="0"></a>
+
+  <a target="_blank" href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0"><img src="./Laborator 11 - Tehnici de prezentare [CS Open CourseWare]_files/button-xhtml.png" width="80" height="15" alt="Valid XHTML 1.0" border="0"></a>
+</div>
+
+  </div>
+</div>
+
+<div class="no"><img src="./Laborator 11 - Tehnici de prezentare [CS Open CourseWare]_files/indexer.php" width="2" height="1" alt=""></div>
+
+
+</body></html>

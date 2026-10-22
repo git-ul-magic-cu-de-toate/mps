@@ -1,0 +1,1607 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0058)https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr" wtx-context="3B6E83B0-73BB-4AAD-8C4C-DE02C8F2F5B5"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>
+    Laborator 9 - Testarea si asigurarea calitatii unui proiect    [CS Open CourseWare]
+  </title>
+
+  <meta name="generator" content="DokuWiki">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2019-11-20T10:46:58+0200">
+<meta name="keywords" content="mps,laboratoare,laborator-09">
+<link rel="search" type="application/opensearchdescription+xml" href="https://ocw.cs.pub.ro/courses/lib/exe/opensearch.php" title="CS Open CourseWare">
+<link rel="start" href="https://ocw.cs.pub.ro/courses/">
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="https://ocw.cs.pub.ro/courses/feed.php">
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="https://ocw.cs.pub.ro/courses/feed.php?mode=list&amp;ns=mps:laboratoare">
+<link rel="alternate" type="text/html" title="Plain HTML" href="https://ocw.cs.pub.ro/courses/_export/xhtml/mps/laboratoare/laborator-09">
+<link rel="canonical" href="http://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09">
+<link rel="stylesheet" type="text/css" href="./Laborator 9 - Testarea si asigurarea calitatii unui proiect [CS Open CourseWare]_files/css.php">
+<script type="text/javascript">/*<![CDATA[*/var NS='mps:laboratoare';var JSINFO = {"id":"mps:laboratoare:laborator-09","namespace":"mps:laboratoare","isadmin":0,"isauth":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="./Laborator 9 - Testarea si asigurarea calitatii unui proiect [CS Open CourseWare]_files/js.php"></script>
+<script type="text/x-mathjax-config;executed=true">/*<![CDATA[*/MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+        displayMath: [ ["$$","$$"], ["\\[","\\]"] ],
+        processEscapes: true
+    }
+});
+/*!]]>*/</script>
+<script src="./Laborator 9 - Testarea si asigurarea calitatii unui proiect [CS Open CourseWare]_files/MathJax.js.descărcare" id=""></script>
+<script type="text/javascript">/*<![CDATA[*/
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		  
+/*!]]>*/</script><script src="./Laborator 9 - Testarea si asigurarea calitatii unui proiect [CS Open CourseWare]_files/ga.js.descărcare" type="text/javascript"></script>
+<script type="text/javascript">/*<![CDATA[*/
+var pageTracker = _gat._getTracker("UA-38383934-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+		  
+/*!]]>*/</script>
+
+  <link rel="shortcut icon" href="https://ocw.cs.pub.ro/courses/lib/tpl/arctic/images/favicon.ico">
+
+  
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body><div id="MathJax_Message" style="display: none;"></div>
+<div id="wrapper" class="show">
+  <div class="dokuwiki">
+
+    
+    <div class="stylehead">
+      <div class="header">
+        <div class="pagename">
+          <a href="https://ocw.cs.pub.ro/courses/mps/"><img height="70" src="./Laborator 9 - Testarea si asigurarea calitatii unui proiect [CS Open CourseWare]_files/sigla_mps.png"> </a>        </div>
+        <div class="logo">
+          <a style="color: #AAA !important;" href="https://ocw.cs.pub.ro/courses/">Open CourseWare</a>        </div>
+      </div>
+    
+       
+      <div class="breadcrumbs">
+              </div>
+      
+            </div>
+
+                  <div class="bar" id="bar__top">
+        <div class="bar-left">
+                  </div>
+        <div class="bar-right">
+          <a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09?do=recent" class="action recent" accesskey="r" rel="nofollow" title="Recent changes [R]">Recent changes</a><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09?do=login&amp;sectok=76ee6032b72b171266e4d13087d8f014" class="action login" rel="nofollow" title="Login">Login</a>        </div>
+    </div>
+        
+    
+    
+    
+              <div class="left_page">
+          
+<h1 class="sectionedit1" id="laborator_9_-_testarea_si_asigurarea_calitatii_unui_proiect">Laborator 9 - Testarea si asigurarea calitatii unui proiect</h1>
+<div class="level1">
+
+</div>
+
+<h3 class="sectionedit2" id="termeni">Termeni</h3>
+<div class="level3">
+
+<p>
+<strong>Bug</strong> - O problemă, eroare, defect, posibilitate nedocumentată, greșeală într-un sistem software care împiedică sistemul să funcționeze așa cum este de așteptat este un bug.
+</p>
+
+<p>
+<strong>Bug report</strong> - Un raport care detaliază un bug într-un program, adică cum se manifestă, când, care parte a codului este responsabilă, eventual și o soluție posibilă.
+</p>
+
+<p>
+<strong>Bug tracking</strong> - Bug tracking-ul este un mod organizat de a ține evidența bugurilor și a stărilor acestora (deschis, rezolvat, testat, închis). Acesta poate varia de la forme neorganizate (întâlniri în echipă) la forme organizate (liste de discuții, mail-uri, soluții specializate).
+</p>
+
+<p>
+<strong>Sistem de bug tracking</strong> - O aplicație software care are ca rol ușurarea bug tracking-ului (este o metodă eficientă centralizată și ușor utilizabilă.) Există soluții gratuite, dar și soluții enterprise cu prețuri foarte ridicate. Un sistem de bug tracking este un subtip de sistem de issue tracking.
+</p>
+
+<p>
+<strong>Sistem de issue tracking</strong> - O aplicație software care are ca rol centralizarea și adresarea tuturor cererilor legate de unul sau mai multe produse, de la probleme la schimbări de design și aplicări de patch-uri. Cele mai multe sunt în același timp și bug trackere. În general, sunt mai complexe decât bug trackerele.
+</p>
+
+<p>
+<strong>Patch</strong> - O mică bucată de software creată spre a rezolva problemele și a îmbunătăți performanțele unui program. Aceasta include, dar nu este limitata la: repararea de bug-uri, creșterea vitezei, îmbunătățirea graficii. Unele patch-uri creează și probleme noi.
+</p>
+
+<p>
+<strong>Patch management</strong> - Procesul de a stabili o strategie și a plănui ce patch-uri să fie aplicate, la ce sisteme și când este momentul potrivit pentru aplicarea lor.
+</p>
+
+</div>
+
+<h3 class="sectionedit3" id="aplicatii">Aplicații</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="github">GitHub</h4>
+<div class="level4">
+
+<p>
+Așa cum a fost descris în cadrul laboratorului 4, <a href="https://github.com/" class="urlextern" title="https://github.com/" rel="nofollow">GitHub</a> permite și un management al bug-urilor.
+</p>
+
+</div>
+
+<h4 id="redmine">Redmine</h4>
+<div class="level4">
+
+<p>
+<a href="http://www.redmine.org/" class="urlextern" title="http://www.redmine.org" rel="nofollow">Redmine</a> este un tool complex, care oferă și suport pentru bug tracking.
+Prin secțiunea “New issue” se pot publica bug-uri, iar aceastea pot fi urmărite.
+</p>
+
+</div>
+
+<h4 id="bugzilla">Bugzilla</h4>
+<div class="level4">
+
+<p>
+<a href="http://www.bugzilla.org/about/" class="urlextern" title="http://www.bugzilla.org/about/" rel="nofollow">Bugzilla</a> este unul dintre cele mai populare sisteme de urmărire a bug-urilor având o multitudine de <a href="http://www.bugzilla.org/features" class="urlextern" title="http://www.bugzilla.org/features" rel="nofollow">functionalitati</a>.
+</p>
+
+</div>
+
+<h4 id="trac">Trac</h4>
+<div class="level4">
+
+<p>
+<a href="http://trac.edgewall.org/" class="urlextern" title="http://trac.edgewall.org/" rel="nofollow">Trac</a> nu este atât de sofisticat ca Bugzilla în ce privește urmărirea bugurilor (adică bug tracking), dar oferă mult mai multe alte facilități precum un navigator de Subversion și un wiki, deci o platformă completă de colaborare între utilizatori și dezvoltatori. De asemenea Trac poate fi extins ușor prin intermediul <a href="http://trac.edgewall.org/wiki/TracPlugins" class="urlextern" title="http://trac.edgewall.org/wiki/TracPlugins" rel="nofollow">modulelor</a>, unul dintre cele mai populare fiind cel pentru code review.
+</p>
+
+</div>
+
+<h4 id="debian_bug_tracking_software">Debian bug tracking software</h4>
+<div class="level4">
+
+<p>
+Fiecare bug are o adresă de mail distinctă. Comentariile și controlul bug-urilor se face cu emailuri tipizate.
+</p>
+
+</div>
+
+<h4 id="launchpad">Launchpad</h4>
+<div class="level4">
+
+<p>
+<a href="https://launchpad.net/" class="urlextern" title="https://launchpad.net" rel="nofollow">Launchpad</a> este o aplicație web și un site pentru publicarea proiectelor software (în special cele open source). Printre multe alte facilități interesante dispune și de <a href="https://launchpad.net/+tour/bugs" class="urlextern" title="https://launchpad.net/+tour/bugs" rel="nofollow">bug-tracking</a>.
+</p>
+
+<p>
+Launchpad poate centraliza rapoartele bugurile din mai multe surse independente și oferă posibilitatea dezvoltatorilor de a discuta despre acel bug într-un singur loc. Launchpad se integrază bine cu trackere externe: Bugzilla, Trac, Sourceforge, Roundup, Mantis, RT și Debian BTS. Launchpad încearcă să elimine patchurile scrise în comentarii prin oferirea posibilității de publicare a unei ramure de cod (branches).
+Bugurile pot fi urmărite prin email și atom feeds, fiecare bug având asociată o adresa de email (ex: 249177@bugs.launchpad.net).
+</p>
+
+</div>
+
+<h3 class="sectionedit4" id="patch-uri">Patch-uri</h3>
+<div class="level3">
+
+<p>
+Un fișier patch e un fișier text care descrie diferențele dintre două versiuni ale unui fișier sau dintre două fișiere distincte. Există două formate standard pentru astfel de fișiere: tipul normal și context copiat.
+Mai jos este prezentat un format îmbunătățit, <strong>Context unificat</strong>, care este cel mai întâlnit și mai ușor de vizualizat format.
+</p>
+
+<p>
+Structura unui fișier patch cu context unificat:
+</p>
+<pre class="code"> --- original_file_name	comentarii (ștampilă de timp, versiunea fișierului în svn/git/etc., etc.)
+ +++ modified_file_name	comentarii (idem)
+ @@ -start_line__original_file,nr_lines__original_file +start_line__modified_file,nr_lines__modified_file @@
+ context_line_before_1
+ context_line_before_2
+    ...
+ context_line_before_n
+ -  original_line_1
+ -  original_line_2
+    ...
+ -  original_line_m
+ +  modified_line_1
+ +  modified_line_2
+    ...
+ +  modified_line_p
+ context_line_after_1
+ context_line_after_2
+    ...
+ context_line_after_n</pre>
+
+<p>
+Exemplu de fișier patch cu context unificat:
+</p>
+<pre class="code"> --- v1.c	2008-11-18 02:34:38.000000000 +0200
+ +++ v2.c	2008-11-18 02:38:14.000000000 +0200
+ @@ -261,8 +261,18 @@
+      if (build_key(argv[1]))
+          return 2;
+  
+ -    display("original  message: [%s]\n", msg, blocks);
+ -
+ +    //display("original  message: [%s]\n", msg, blocks);
+ +    if (blocks)
+ +    {
+ +        char c;
+ +        char * fmt = "original  message: [%s]\n";
+ +        int len = blocks;
+ +        c = msg[len-1];
+ +        if (c == 'X')
+ +            msg[len-1] = '\0';
+ +        printf(fmt, msg);
+ +        msg[len-1] = c;
+ +    }
+  
+      apply(msg, blocks, normalize);
+      encrypt((unsigned short*) msg, blocks/2);</pre>
+
+</div>
+
+<h3 class="sectionedit5" id="creare_patch">Creare patch</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="diff">diff</h4>
+<div class="level4">
+
+<p>
+<code></code>'diff<code></code>' e un program cu care se pot crea fișiere de tip patch având la dispoziție fișierul original și fișierul modificat. <code>diff</code> poate crea fișiere patch în oricare din cele trei formate standard:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>normal</strong></div>
+</li>
+</ul>
+<pre class="code"> diff origial_filename modified_filename</pre>
+<ul>
+<li class="level1"><div class="li"> <strong>context unificat</strong> </div>
+</li>
+</ul>
+
+<p>
+pentru a crea un fișier patch cu un număr implicit de linii de context <code>unificat</code>:
+</p>
+<pre class="code"> diff -u origial_filename modified_filename</pre>
+
+<p>
+pentru a crea un fișier patch cu x linii de context <code>unificat</code>:
+</p>
+<pre class="code"> diff -Ux origial_filename modified_filename</pre>
+
+</div>
+
+<h4 id="git_format-patch">git format-patch</h4>
+<div class="level4">
+
+<p>
+<code>git</code> poate genera fișiere de patch care descriu diferențele între două commit-uri.
+Implicit <code>git format-patch</code> crează un fișier diff în format unificat (cel mai răspândit format în lumea open-source) și îl scrie la stdout. Pentru a-l scrie într-un fișier pe disc, trebuie redirectată ieșirea către un fișier:
+</p>
+<pre class="code"> git format-patch [optional parameters] &gt; file.patch</pre>
+
+</div>
+
+<h4 id="utilizare_patch">Utilizare patch</h4>
+<div class="level4">
+
+<p>
+Un fișier <code>patch</code> nu este folosit doar pentru a vizualiza diferențele între două versiuni ale unor fișiere, ci și pentru a transmite un anumit set de modificări de la un utilizator la altul pentru a fi aplicate.
+</p>
+
+<p>
+Utilitarul standard cu care se aplică patch-uri se numește <code>patch</code>.
+</p>
+
+<p>
+Modul cel mai întâlnit de utilizare este:
+</p>
+<pre class="code"> patch -pNUM &lt; filename.patch</pre>
+
+<p>
+<code>patch</code> își ia fișierul din stdin, de aceea trebuie redirectat fișierul de intrare.
+</p>
+
+<p>
+În fișierul <code>filename.patch</code>, <code>diff</code> sau <code>git format-patch</code> va scrie și numele fișierelor pe care le-a comparat și din conținutul cărora a extras diferențele. E posibil ca <code>diff</code> sau <code>git format-patch</code> să fie rulate într-un alt director față de cel în care se va rula <code>patch</code>. Cu opțiunea <code>-pNUM</code> se specifică numărul de nivele din calea specificată în fișierul <code>filename.patch</code> care vor fi ignorate când se va încerca să se determine.
+</p>
+
+<p>
+De asemenea, un patch poate fi aplicat cu comanda: 
+</p>
+<pre class="code">git am filename.patch</pre>
+
+</div>
+
+<h3 class="sectionedit6" id="test_cases">Test Cases</h3>
+<div class="level3">
+
+<p>
+Pentru o testare de calitate, este important să existe o planificare riguroasă a testării încă din faza de proiectare sau development. Pe măsură ce se conturează definițiile modulelor, entităților de date, obiectelor, claselor, funcțiilor, etc. este recomandabil să se scrie și “scenarii” de testare ale acestora, fie <em>top-down</em>, fie <em>bottom-up</em>.
+</p>
+
+<p>
+În industria software, “scenariile” de test se numesc <strong>test cases</strong>.
+</p>
+
+<p>
+Un exemplu de test case:
+</p>
+
+<p>
+trebuie verificată funcționarea unei pagini de login care conține un input de user name și unul de parolă
+</p>
+<ul>
+<li class="level1"><div class="li"> click pe “Login” fără a completa user/pass → trebuie să rămân în pagină și să se afișeze un mesaj de eroare</div>
+</li>
+<li class="level1"><div class="li"> completat user corect, parola incorectă sau nulă, click pe “Login” → trebuie să rămân în pagină și să se afișeze un mesaj de eroare</div>
+</li>
+<li class="level1"><div class="li"> completat user corect, parola corectă, click pe “Login” → trebuie să fiu corect autentificat</div>
+</li>
+<li class="level1"><div class="li"> completat user corect, parola corectă, tastat “Enter” → trebuie să fiu corect autentificat</div>
+</li>
+</ul>
+
+<p>
+Există “testare pozitivă” și “testare negativă”, concretizată în <strong>positive test cases</strong> și <strong>negative test cases</strong>. Testarea pozitiva înseamnă <em>verificarea faptului că sistemul face ceea ce trebuie să facă</em>. Testarea negativă înseamnă verificarea faptului că sistemul <em>nu face ceea ce nu trebuie să facă</em>.
+</p>
+
+<p>
+Pe cazul anterior:
+</p>
+<ul>
+<li class="level1"><div class="li"> testare pozitivă: se verifică faptul că la user/pass corecte se face login iar la user/pass incorecte se afișează un mesaj de eroare</div>
+</li>
+<li class="level1"><div class="li"> testare negativă: se verifică faptul că la user/pass corecte NU se afișează un mesaj de eroare iar la user/pass incorecte NU se face login și NU se “sparge” sistemul</div>
+</li>
+</ul>
+
+<p>
+În principiu, cele două approachuri sunt echivalente, însă în practică testarea pozitivă se referă la funcționarea “normală” a sistemului, iar testarea negativă la “corner cases”. De exemplu, pentru testarea unui feature critic ca time to market dar non-critic ca și calitate (ex. twitter), se va prefera testarea pozitivă, care asigură că sistemul funcționează corect pentru cei mai mulți utilizatori. Pentru testarea unui feature critic ca și calitate (ex. online banking) se va insista pe teste negative, ex. se va încerca “spargerea” sistemului prin combinații incorecte.
+</p>
+
+<p>
+Există, ca în orice alt domeniu, tool-uri open source pentru managementul test cases:
+</p>
+<ul>
+<li class="level1"><div class="li"> Bugzilla Testopia: <a href="http://www.mozilla.org/projects/testopia/" class="urlextern" title="http://www.mozilla.org/projects/testopia/" rel="nofollow">http://www.mozilla.org/projects/testopia/</a></div>
+</li>
+<li class="level1"><div class="li"> Incremental Scenario Testing: <a href="https://sourceforge.net/projects/istt/" class="urlextern" title="https://sourceforge.net/projects/istt/" rel="nofollow">https://sourceforge.net/projects/istt/</a></div>
+</li>
+<li class="level1"><div class="li"> QA Traq: <a href="http://www.testmanagement.com/" class="urlextern" title="http://www.testmanagement.com/" rel="nofollow">http://www.testmanagement.com/</a></div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="black_box_testing">Black Box Testing</h4>
+<div class="level4">
+
+<p>
+Se aplică în cazul în care pentru programul ce trebuie testat sursele nu sunt disponibile, ci doar interfața de acces (binarul, o interfața implementată de clasa testată, etc).
+Cum se testează:
+Se aplică un set de intrări, iar ieșirile sunt comparate cu un set de ieșiri corecte.
+</p>
+<ul>
+<li class="level1"><div class="li"> Intrări - un set de intrări ce vor fi trimise programului pentru execuție. Intrările nu trebuie neapărat să fie niște fișiere ci pot fi niște apeluri de funcții sau un alt program ce simulează alte module ce interacționază cu programul testat.</div>
+</li>
+<li class="level1"><div class="li"> Ieșiri - pentru fiecare intrare se definește un set de ieșiri posibile cu care se testează ieșirea programului. În multe din cazuri ieșirea e deterministică și trebuie doar comparate ieșirea programului cu ieșirea așteptă, iar în alte cazuri este necesară scrierea unui program.</div>
+</li>
+</ul>
+
+<p>
+<em>Exemplu</em>
+Testarea unui program care la intrare primește un string pe care vrea să îl parseze în
+</p>
+<ul>
+<li class="level1"><div class="li"> număr întreg</div>
+<ul>
+<li class="level2"><div class="li"> limitele inferioare și superioare</div>
+</li>
+<li class="level2"><div class="li"> Unordered List Item câteva constante mici (0, -1, 1)</div>
+</li>
+<li class="level2"><div class="li"> câteva constante mari</div>
+</li>
+<li class="level2"><div class="li"> întregi negativi</div>
+</li>
+<li class="level2"><div class="li"> caractere invalide (de exemplu, pentru baza 10 nu putem avea A)</div>
+</li>
+<li class="level2"><div class="li"> numere care au 0 în față (dar excesiv de lungi gen: 00000000000000000000000000000666)</div>
+</li>
+<li class="level2"><div class="li"> același lucru pentru diferite baze (dacă sunt suportate)</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> float</div>
+<ul>
+<li class="level2"><div class="li"> ca mai sus, dar în principal trebuie ținut cont de valorile speciale definite în standardul <a href="http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=4610935" class="urlextern" title="http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=4610935" rel="nofollow">IEEE 754</a></div>
+</li>
+<li class="level2"><div class="li"> -0.0 != 0.0</div>
+</li>
+<li class="level2"><div class="li"> Nan, -Nan</div>
+</li>
+<li class="level2"><div class="li"> inf, -inf</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> un șir de caractere</div>
+<ul>
+<li class="level2"><div class="li"> limbajul acceptat (LFA style)</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> un vector</div>
+<ul>
+<li class="level2"><div class="li"> se aplică cazurile de la numere întregi (pentru 1 element)</div>
+</li>
+<li class="level2"><div class="li"> 0 elemente, 1 element, 2 elemente, 5 elemente, număr maxim de elemente</div>
+</li>
+<li class="level2"><div class="li"> caractere de despărțire / elemente invalide</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h4 id="boundary_testing">Boundary testing</h4>
+<div class="level4">
+
+<p>
+Boundary testing sau boundary value analysis este o metodă de proiectare a suitelor de teste pentru cazurile în care se folosesc <strong>valori la limită</strong> acceptate de program. În general, accentuează testarea “corner case”-urilor.
+Unele teste care fac parte din suita boundary testing sunt “stress tests”.
+</p>
+
+<p>
+În general, boundary value analysis se realizează în doi pași:
+# identificarea claselor de echivalență
+# proiectarea suitelor de test
+</p>
+
+<p>
+Primul pas înseamnă, de obicei, partiționarea valorilor posibile în clase valide și invalide. 
+<em>Exemplu</em> Un program care primește valori pozitive până în 99, va avea trei clase:
+</p>
+<ul>
+<li class="level1"><div class="li"> clasa validă (0 &lt; n ⇐ 99)</div>
+</li>
+<li class="level1"><div class="li"> prima clasă invalidă (n ⇐ 0)</div>
+</li>
+<li class="level1"><div class="li"> a doua clasă invalidă (n &gt; 99)</div>
+</li>
+</ul>
+
+<p>
+Al doilea pas înseamnă proiectarea unei suite de teste care vor selecta anumite valori care să verifice reacția programului la valori valide sau invalide. 
+<em>Exemplu</em> Dacă un program primește valori în domeniul [-999,999], atunci o suită posibilă de test ar fi:
+</p>
+<ul>
+<li class="level1"><div class="li"> testare valoare -999</div>
+</li>
+<li class="level1"><div class="li"> testare valoare 999</div>
+</li>
+<li class="level1"><div class="li"> testare valoare -998</div>
+</li>
+<li class="level1"><div class="li"> testare valoare 998</div>
+</li>
+</ul>
+
+<p>
+În general, testele trebuie să includă prima și ultima valoare posibilă. De asemenea, se recomandă testarea de condiții extreme de intrare sau ieșire (valori foarte mici, foarte mari, invalide etc.)
+</p>
+
+<p>
+Problemele pe care le detectează boundary testing sunt, de obicei:
+</p>
+<ul>
+<li class="level1"><div class="li"> folosirea incorectă a operatorilor relaționali (mai mic, mai mare etc.)</div>
+</li>
+<li class="level1"><div class="li"> folosirea de valori constante inițializate incorect</div>
+</li>
+<li class="level1"><div class="li"> erori de calcul care ar putea realiza overflow sau wrap-around în cazul conversiei între diverse tipuri de date</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="link-uri_utile">Link-uri utile</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> <a href="http://blogs.msdn.com/imtesty/archive/2008/11/04/boundary-testing-isn-t-guessing-at-numbers.aspx" class="urlextern" title="http://blogs.msdn.com/imtesty/archive/2008/11/04/boundary-testing-isn-t-guessing-at-numbers.aspx" rel="nofollow">Boundary testing isn't guessing at numbers</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.geocities.com/xtremetesting/BoundaryValues.html" class="urlextern" title="http://www.geocities.com/xtremetesting/BoundaryValues.html" rel="nofollow">boundary values software testing</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.win.tue.nl/~mousavi/testing/1.pdf" class="urlextern" title="http://www.win.tue.nl/~mousavi/testing/1.pdf" rel="nofollow">Boundary Value Testing</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.cs.swan.ac.uk/~csmarkus/CS339/dissertations/NeateB.pdf" class="urlextern" title="http://www.cs.swan.ac.uk/~csmarkus/CS339/dissertations/NeateB.pdf" rel="nofollow">Boundary Value Analysis</a></div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="unit_testing">Unit testing</h4>
+<div class="level4">
+
+<p>
+<strong>Unit testing</strong> este o metodă folosită pentru a testa fiecare componentă a unui proiect. O <em>unitate</em> este cea mai mică componentă a unei aplicații. În mod ideal modulele de test sunt independente unele de celelalte. Pentru fiecare <em>unitate</em> se fac teste separate.
+</p>
+
+<p>
+Există și o abordare <strong>Test Driven Development - TDD</strong> în care se scrie testul pentru unitate înainte de scrierea codului.
+</p>
+
+</div>
+
+<h5 id="stubs">Stubs</h5>
+<div class="level5">
+
+<p>
+O problemă des întâlnită în testarea proiectelor este testarea unei părți a proiectului înainte ca alte părți să fie gata. Se pot folosi pentru asta interfețe, numite <strong>Stubs</strong>, care simulează funcțiile de bază ale obiectului respectiv fără să efectueze și teste de integritate a datelor sau ale fluxului logic al problemei. Ele sunt des folosite în cursul dezvoltării unităților proiectului care depind de obiectul simulat.
+</p>
+
+</div>
+
+<h5 id="mockup">Mockup</h5>
+<div class="level5">
+
+<p>
+<strong>Mockups</strong> sunt tot implementarea unor interfețe care testează mai aprofundat funcțiile necesare. Ele simulează spre exemplu funcționarea unui server pentru a putea testa facilitățile clientului și testează de asemenea autentificarea clientului înainte ca acesta să poată efectua anumite tranzacții. Pentru o utilizare mai facilă se recomandă folosirea interfețelor și utilizarea lor în funcția de testare. O implementare pentru testare este o implementare care conține numai cod de test și imită cât mai bine funcționarea viitorului obiect. Mockup-urile sunt utile în multe situații precum:
+* cazul când obiectul în sine nu există
+* obiectul real/funcția reală ia foarte mult timp să ruleze
+* obiectul real este prea dificil de pus în funcțiune
+* funcția reală returnează valori nedeterministe și se dorește testarea comportării cu toate valorile limită
+* funcția reală necesită interacțiunea cu utilizatorul și nu se poate folosi în teste automate
+</p>
+
+<p>
+<strong>Important</strong> este ca atunci când se folosesc obiecte pentru simulare, trebuie să se țina cont de faptul că obiectul trebuie să simuleze cât mai bine realitatea. Există și facilități implementate pentru folosirea mockup-urilor în .NET precum NMock, POCMock, .NET Mock Object.
+</p>
+
+</div>
+
+<h4 id="regression_testing">Regression testing</h4>
+<div class="level4">
+
+<p>
+“Also as a consequence of the introduction of new bugs, program maintenance requires far more system testing per statement written than any other programming. Theoretically, after each fix one must run the entire batch of test cases previously run against the system, to ensure that it has not been damaged in an obscure way. In practice, such regression testing must indeed approximate this theoretical idea, and it is very costly.” – Fred Brooks, The Mythical Man Month (p 122)
+</p>
+
+<p>
+<strong>Regression testing</strong> implică verificarea ca odată cu avansarea în proiect să nu se piardă funcționalități deja implementate, sau să se genereze erori noi.
+</p>
+
+<p>
+Cea mai simplă și eficientă metodă de regression testing este să se păstreze toate testele într-un batch care să se ruleze periodic, astfel orice bug nou va fi remarcat imediat și poate fi remediat. Desigur, asta implică ca testele respective să poată fi rulate automat.
+</p>
+
+</div>
+
+<h4 id="fault_injection">Fault injection</h4>
+<div class="level4">
+
+<p>
+'Fault injection' este o metodă de testare software care implică generarea de input-uri care să ducă programul pe căi (în general de error handling) care altfel ar fi parcurse foarte rar în decursul unei testări normale, îmbunătățind astfel foarte mult code coverage-ul.
+</p>
+
+<p>
+Există atât software cât și hardware fault injection.
+</p>
+
+</div>
+
+<h4 id="hwifi_hardware_implemented_fault_injection">HWIFI(Hardware Implemented Fault Injection)</h4>
+<div class="level4">
+
+<p>
+Există încă din 1970, și implică crearea de scurtcircuite pe placă, generând astfel erori.
+</p>
+
+</div>
+
+<h4 id="swifi_software_implemented_fault_injection">SWIFI(Software Implemented Fault Injection)</h4>
+<div class="level4">
+
+<p>
+Se împarte în două mari categorii
+# Compile time injection 
+# Run time injection
+</p>
+
+</div>
+
+<h5 id="compile_time_injection">Compile time injection</h5>
+<div class="level5">
+
+<p>
+Modificarea de linii de cod la compilare pentru a genera comportamente eronate.
+Ex: a++ poate fi modificat în a–;
+</p>
+
+</div>
+
+<h5 id="run_time_injection">Run time injection</h5>
+<div class="level5">
+<ul>
+<li class="level1"><div class="li"> Coruperea spațiului de memorie al procesului</div>
+</li>
+<li class="level1"><div class="li"> Interceptarea syscall-urilor și introducerea de erori în ele</div>
+</li>
+<li class="level1"><div class="li"> Reordonarea, coruperea și distrugerea pachetelor de pe rețea.</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit7" id="platforme_de_testare">Platforme de testare</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Java: una din cele mai cunoscute platforme de testare este <a href="http://www.junit.org/" class="urlextern" title="http://www.junit.org/" rel="nofollow">JUnit</a> pentru care găsiți <a href="http://www.cavdar.net/2008/07/21/junit-4-in-60-seconds/" class="urlextern" title="http://www.cavdar.net/2008/07/21/junit-4-in-60-seconds/" rel="nofollow">aici</a> un tutorial.</div>
+</li>
+<li class="level1"><div class="li"> C#: pentru cam toate platformele .NET există <a href="http://www.nunit.org/index.php" class="urlextern" title="http://www.nunit.org/index.php" rel="nofollow">NUnit</a>. Un tutorial gasiți la adresa <a href="http://www.nunit.org/index.php?p=quickStart&amp;r=2.4" class="urlextern" title="http://www.nunit.org/index.php?p=quickStart&amp;r=2.4" rel="nofollow">http://www.nunit.org/index.php?p=quickStart&amp;r=2.4</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://docs.python.org/library/unittest.html" class="urlextern" title="http://docs.python.org/library/unittest.html" rel="nofollow">Python unittest</a> pentru Python.</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit8" id="testarea_interfetelor_grafice">Testarea interfețelor grafice</h3>
+<div class="level3">
+
+<p>
+Există mai multe utilitare pentru testarea automată a programelor cu interfețe grafice (o listă mai detaliată aveți <a href="http://en.wikipedia.org/wiki/List_of_GUI_testing_tools" class="urlextern" title="http://en.wikipedia.org/wiki/List_of_GUI_testing_tools" rel="nofollow">aici</a>).
+</p>
+
+</div>
+
+<h4 id="autoit">AutoIt</h4>
+<div class="level4">
+
+<p>
+<a href="http://www.autoitscript.com/autoit3/" class="urlextern" title="http://www.autoitscript.com/autoit3/" rel="nofollow">AutoIt</a> este un limbaj de programare asemănător Visual Basic cu un compilator ce rulează pe Windows și care permite (printre altele):
+</p>
+<ul>
+<li class="level1"><div class="li"> apelul unor funcții din DLL-uri Win32</div>
+</li>
+<li class="level1"><div class="li"> execuția de aplicații (consolă/<abbr title="Graphical User Interface">GUI</abbr>)</div>
+</li>
+<li class="level1"><div class="li"> creare de interfețe <abbr title="Graphical User Interface">GUI</abbr> (ferestre de mesaje, atenționare, de introducere de date, etc.)</div>
+</li>
+<li class="level1"><div class="li"> manipulare sunete</div>
+</li>
+<li class="level1"><div class="li"> simulare mișcări de mouse și apăsare taste și combinații de taste</div>
+</li>
+<li class="level1"><div class="li"> manipulare ferestre și procese</div>
+</li>
+<li class="level1"><div class="li"> manipulare elemente în cadrul unei ferestre</div>
+</li>
+</ul>
+
+<p>
+Scripurile pot fi compilate sub forma unor executabile Win32.
+</p>
+
+<p>
+Două tutoriale de AutoIt: interacțiune cu <a href="http://www.autoitscript.com/autoit3/docs/tutorials/notepad/notepad.htm" class="urlextern" title="http://www.autoitscript.com/autoit3/docs/tutorials/notepad/notepad.htm" rel="nofollow">notepad</a> și instalare <a href="http://www.autoitscript.com/autoit3/docs/tutorials/winzip/winzip.htm" class="urlextern" title="http://www.autoitscript.com/autoit3/docs/tutorials/winzip/winzip.htm" rel="nofollow">winzip</a>
+</p>
+
+</div>
+
+<h4 id="abbot">Abbot</h4>
+<div class="level4">
+
+<p>
+<a href="http://abbot.sourceforge.net/doc/overview.shtml" class="urlextern" title="http://abbot.sourceforge.net/doc/overview.shtml" rel="nofollow">Abbot</a> este o platformă de testare automată a aplicațiilor <abbr title="Graphical User Interface">GUI</abbr> scrise în Java. Testele sunt scrise sub forma unor unit-test-uri. Mai multe detalii pe site-ul proiectului.
+</p>
+
+</div>
+
+<h5 id="code_coverage_code_profiling">Code coverage, Code profiling</h5>
+<div class="level5">
+
+<p>
+Deși folosite în special pentru optimizări și pentru identificarea bottleneck-urilor din sistem, utilitarele de tip code-coverage și code-profiling pot fi folosite pentru detectarea anumitor tipuri de probleme precum bucle infinite, sincronizare ineficientă etc.
+</p>
+
+</div>
+
+<h4 id="code_coverage">Code coverage</h4>
+<div class="level4">
+
+<p>
+Utilitarele de tipul code coverage sunt folosite în procesul de testare a programelor pentru inspectarea unei părți cât mai mari a programului. Diversele tipuri de mecanisme de tip code coverage sunt folosite pentru a determina ce funcții sunt acoperite la o rulare, ce instrucțiuni sunt apelate, ce fluxuri de execuție sunt parcurse.
+</p>
+
+<p>
+Programele folosesc opțiuni speciale de code-coverage. Cu ajutorul acestor opțiuni se pot determina funcțiile sau instrucțiunile des (sau rar) folosite și oferă o imagine a nivelului de testare a anumitor părți dintr-un program.
+</p>
+
+<p>
+În general, utilitarele de code coverage sunt privite ca utilitare pentru depanare automată și sunt folosite, de obicei, de inginerii de testare. Depanarea efectivă, cu utilitare de debugging specializate, este realizată, în general de dezvoltatorii care au cunoștință de codul inspectat.
+</p>
+
+</div>
+
+<h4 id="code_profiling">Code profiling</h4>
+<div class="level4">
+
+<p>
+Profilerele sunt utilitare care prezintă informații referitoare la execuția unui program. Sunt utilitare care intră în categoria “dynamic analysis” spre deosebire de alte programe care intră în categoria “static analysis”.
+</p>
+
+<p>
+Profilerele folosesc diverse tehnici pentru colectarea de informații legate de un program. De obicei se obțin informații de timp petrecut în cadrul unei funcții (nivel ridicat) sau numărul de cache miss-uri, TLB miss-uri (nivel scăzut).
+</p>
+
+<p>
+În general, un program care este “profiled” este instrumentat astfel încât, în momentul rulării, să ofere la ieșire informațiile utile dorite. Spre exemplu, pentru a folosi opțiunile gprof, se folosește opțiunea <code>-pg</code> transmisă gcc.
+</p>
+
+</div>
+
+<h2 class="sectionedit9" id="software_quality_assurance_sqa">Software Quality Assurance (SQA)</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> ciclu de asigurare a calității produsului software</div>
+</li>
+<li class="level2"><div class="li"> se desfășoară de-a lungul întregului ciclu de dezvoltare a produsului software, pe care <strong>îl îndrumă, monitorizează, auditează, evaluează și coordonează</strong></div>
+</li>
+<li class="level2"><div class="li"> complementează procesul de dezvoltare a proiectului</div>
+</li>
+<li class="level2"><div class="li"> (în mediile enterprise) este realizat de către un grup de resurse umane dedicate asigurării calității.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="domeniul_qa">Domeniul QA</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> metodologia QA a fost introdusă inițial în cadrul fabricilor, unde și-a demonstrat aportul la succesul producției de calitate</div>
+</li>
+<li class="level2"><div class="li"> ulterior, s-a dorit adoptarea QA la mediul dezvoltator de aplicații software</div>
+</li>
+<li class="level2"><div class="li"> <em>Problema</em>: produsul software nu este palpabil, deci măsurarea funcțiilor, a beneficiilor și a costurilor sunt mai dificil de determinat</div>
+</li>
+<li class="level2"><div class="li"> <em>Soluția</em>: s-au adăugat concepte precum quality attributes (metrici software, cerinte functionale si non-functionale) pentru a putea măsura calitatea produsului software.</div>
+</li>
+</ul>
+
+<p>
+Cel mai cunoscut <em>model de atribute</em> ale produselor software de calitate este <strong>FURPS+ model</strong>, care cuprinde următoarele atribute:
+</p>
+<ol>
+<li class="level1"><div class="li"> <strong>funcționalitate</strong> (<em>functionality</em>)</div>
+<ul>
+<li class="level4"><div class="li">  cuprinde toate cerințele funcționale ale sistemului așa cum au fost stabilite în SRS	</div>
+</li>
+</ul>
+</li>
+<li class="level3"><div class="li"> <strong>utilizabilitate</strong> (<em>usability</em>) </div>
+<ul>
+<li class="level4"><div class="li">  cuprinde cerințe legate de ușurința de folosire a interfeței sistemului de către utilizator (interfața trebuie să fie estetică, intuitivă, ergonomică, consistentă, accesibilă și celor cu disabilități)</div>
+</li>
+</ul>
+</li>
+<li class="level3"><div class="li"> <strong>încredere</strong> (<em>reliability</em>)</div>
+<ul>
+<li class="level4"><div class="li">  cuprinde cerințe legate de precizia răspunsurilor, de disponibilitatea și toleranța la defecte a sistemului</div>
+</li>
+</ul>
+</li>
+<li class="level3"><div class="li"> <strong>performanță</strong> (<em>performance</em>)</div>
+<ul>
+<li class="level4"><div class="li">  cuprinde cerințe legate de timpii de lucru, precum timp de răspuns (response time), timp de revenire (recovery time), timp de lansare (startup time)</div>
+</li>
+</ul>
+</li>
+<li class="level3"><div class="li"> <strong>avantaje suplimentare</strong> (<em>supportability</em>)</div>
+<ul>
+<li class="level4"><div class="li">  cuprinde cerințe legate de ușurința testării (testability), a mentenanței (maintainability), a configurării (configurability), de gradul de scalare (scalability) și compatibilitate (compatibility) și de oferire de multiple traduceri ale conținutului interfeței cu utilizatorul.</div>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li class="level1"><div class="li"> “<strong>+</strong>” se referă la faptul că la acest model se pot adăuga și alte cerințe de calitate personalizate. <br>
+<br>
+</div>
+</li>
+</ul>
+
+<p>
+Au apărut <strong>standarde</strong> dedicate produselor software, de tipurile:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>standarde de managementul calității</strong> (<em>Quality management</em>)</div>
+<ul>
+<li class="level4"><div class="li">  <em>ISO 9000 – 3</em> Quality Management and Quality Assurance Standards – Part 3: Guidelines for the application of 9001 to the development, supply, installation and maintenance of computer software</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <strong>standarde de documentare</strong> (<em>Documentation Standards</em>) specifică formatul și conținutul documentelor de planificare și control și a documentației produsului</div>
+<ul>
+<li class="level4"><div class="li">  <strong>standarde de planificare</strong> (<em>Producing plans</em>): <em>IEEE Std1059-1993</em> Guide for Software Veriﬁcation and Validation Plans</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <strong>standarde de Project Management</strong></div>
+<ul>
+<li class="level4"><div class="li">  <em>General project management</em>: <em>IEE Std 1058.1-1987</em> Standard for Software Project Management Plans	</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <strong>standarde de Software Engineering</strong></div>
+<ul>
+<li class="level4"><div class="li">  <em>Software Project Lifecycle</em>: <em>ISO/IEC WD 15288</em> System Life Cycle Processes</div>
+</li>
+<li class="level4"><div class="li">  <em>Software Project Requirements</em>: <em>IEEE Std 1233-1996</em> Guide for Developing System Requirements Speciﬁcations</div>
+</li>
+<li class="level4"><div class="li">  <strong>standarde de proiectare</strong> (<em>Design Standards</em>) specifică reguli și metode de proiectare a soluției pornind de la specificații și formatul și conținutul documentelor de proiectare</div>
+</li>
+<li class="level4"><div class="li">  <strong>standarde de codare</strong> (<em>Code Standards</em>) specifică limbajele de programare alese, convențiile de stil, reguli de construire a interfețelor și modul de comentare a surselor.<br>
+<br>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+Ulterior, s-au definit <strong>proceduri</strong>:
+</p>
+<ul>
+<li class="level1"><div class="li"> sunt succesiuni de pași ce trebuie urmați pentru a împlini un proces (ex: testare, configuration management).</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="activitati_sqa">Activități SQA</h4>
+<div class="level4">
+
+<p>
+<em>Activitățile principale SQA</em> sunt:
+</p>
+<ul>
+<li class="level1"><div class="li"> asigură că standardele și procedurile de calitate alese pentru a fi urmate în proiect sunt <em>adecvate</em> la specificul proiectului (stabilirea lor este critică pentru că standardele oferă criteriile de evaluare a produsului și procedurile criteriile de comparare pentru procesele de dezvoltare și control)</div>
+</li>
+<li class="level2"><div class="li"> asigură că standardele și procedurile alese sunt <em>bine documentate</em> pentru că activitățile de monitorizare, audit și evaluare se bazează pe ele</div>
+</li>
+<li class="level2"><div class="li"> monitorizarea proceselor de dezvoltare și control <em>în raport cu procedurile de calitate</em> (pașii urmați coincid cu cei ai procedurilor?)</div>
+</li>
+<li class="level2"><div class="li"> evaluarea proiectului <em>în raport cu standardele de calitate</em>.</div>
+</li>
+</ul>
+
+<p>
+Activitățile de evaluare și monitorizare au loc în cadrul <strong>auditurilor</strong>. <em>Auditul</em> este <em>tehnica SQA de bază</em> folosită pentru verificarea calității produsului 
+</p>
+<ul>
+<li class="level1"><div class="li"> întocmește <em>rapoarte de audit</em> care sunt predate management-ului, ce afirmă gradul de implementare a calității și oferă <em>recomandări</em> pentru implementarea / sporirea calității în faza următoare a proiectului.<br>
+<br>
+</div>
+</li>
+</ul>
+
+<p>
+Există <strong>activități SQA specifice fazelor</strong> ciclului de viață al proiectului
+</p>
+<ol>
+<li class="level1"><div class="li"> <em>faza de inițiere</em> </div>
+<ul>
+<li class="level4"><div class="li">  SQA intervine în redactarea și revizuirea planului de management</div>
+</li>
+<li class="level4"><div class="li">  asigură că standardele și procedurile alese sunt potrivite, clare și pot servi ca bază de auditare</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <em>faza cerințelor software</em>  </div>
+<ul>
+<li class="level4"><div class="li"> SQA intervine în revizuirea specificațiilor</div>
+</li>
+<li class="level4"><div class="li"> asigură că specificațiile sunt clar exprimate, sunt categorisite corect în cerințe funcționale și non-funcționale (de interfață, de performanță, etc.), acoperă toate cerințele utilizatorului, pot fi măsurate</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <em>faza de proiectare</em></div>
+<ul>
+<li class="level4"><div class="li">  SQA intervine în revizuirea documentelor de proiectare</div>
+</li>
+<li class="level4"><div class="li">  asigură că toate cerințele software au fost traduse corect în componente software în raport cu standardele și procedurile de proiectare</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <em>faza de dezvoltare</em></div>
+<ul>
+<li class="level4"><div class="li">  SQA asigură că soluția este dezvoltată în concordanță cu documentul de proiectare și cu standardele și procedurile de codare</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <em>faza de testare</em></div>
+<ul>
+<li class="level4"><div class="li">  SQA asigură respectarea standardelor și a procedurilor de testare</div>
+</li>
+<li class="level4"><div class="li">  anunță sfârșitul procedurii de testare a cerințelor funcționale</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <em>faza de livrare</em></div>
+<ul>
+<li class="level4"><div class="li">  SQA verifică și declară respectarea cerințelor non-funcționale</div>
+</li>
+<li class="level4"><div class="li">  anunță că produsul final este gata de livrare</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <em>faza de mentenanță</em></div>
+<ul>
+<li class="level4"><div class="li">  SQA intervine pentru a asigura că subciclurile de dezvoltare respectă normele de calitate		</div>
+</li>
+</ul>
+</li>
+</ol>
+
+</div>
+
+<h4 id="sqap_software_quality_assurance_plan">SQAP (Software Quality Assurance Plan)</h4>
+<div class="level4">
+
+<p>
+În general, scopul unei organizații este crearea unui <strong>SQAP</strong> care să asigure nivelul dorit de calitate a produsului.<br>
+<br>
+
+Din standardul <a href="http://ieeexplore.ieee.org/document/720573/" class="urlextern" title="http://ieeexplore.ieee.org/document/720573/" rel="nofollow"> IEEE 730-1998</a>, structura unui SQAP conține următoarele secțiuni:
+</p>
+<ol>
+<li class="level1"><div class="li"> Scopul documentului (Purpose)</div>
+</li>
+<li class="level2"><div class="li"> Documente referite</div>
+</li>
+<li class="level2"><div class="li"> Management</div>
+</li>
+<li class="level2"><div class="li"> Documentație</div>
+</li>
+<li class="level2"><div class="li"> Standarde, practici, convenții, metrici</div>
+</li>
+<li class="level2"><div class="li"> Revizii și audituri</div>
+</li>
+<li class="level2"><div class="li"> Managementul riscului</div>
+</li>
+<li class="level2"><div class="li"> Raportarea problemelor și acțiuni de corecție</div>
+</li>
+<li class="level2"><div class="li"> Utilitare, tehnici și metodologii</div>
+</li>
+<li class="level2"><div class="li"> Controlul furnizorului</div>
+</li>
+<li class="level2"><div class="li"> Training</div>
+</li>
+<li class="level2"><div class="li"> Colectarea înregistrărilor, mentenanța</div>
+</li>
+</ol>
+
+<p>
+Un exemplu de document SQAP puteți găsi <a href="http://people.cs.ksu.edu/~ganti/mse_sqa.htm" class="urlextern" title="http://people.cs.ksu.edu/~ganti/mse_sqa.htm" rel="nofollow">aici</a>.
+</p>
+
+</div>
+
+<h2 class="sectionedit10" id="terminarea_unui_proiect">Terminarea unui proiect</h2>
+<div class="level2">
+
+</div>
+
+<h4 id="contexte_de_terminare">Contexte de terminare</h4>
+<div class="level4">
+
+<p>
+Un proiect se poate finaliza în următoarele contexte:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>s-a terminat</strong> (cazul cel mai fericit – proiect de <em>succes</em>)</div>
+</li>
+<li class="level1"><div class="li"> <strong>a fost oprit</strong> din motive (proiect <em>eșec</em>):</div>
+<ul>
+<li class="level2"><div class="li">  <strong>de afaceri</strong> (apar oportunități noi de business care ar genera un profit semnificativ mai mare decât proiectul actual)</div>
+</li>
+<li class="level2"><div class="li">  <strong>de cost</strong> (bugetul alocat proiectului a fost epuizat și nu mai există surse de finanțare)</div>
+</li>
+<li class="level2"><div class="li">  <strong>de calitate</strong> (calitatea proiectului este foarte redusă, deci investiția nu mai merită)</div>
+</li>
+<li class="level2"><div class="li">  <strong>tehnice</strong> (între timp, au fost lansate soluții mai viabile decât cea a proiectului actual, tehnologiile utilizate de proiect au devenit demodate)		</div>
+</li>
+<li class="level2"><div class="li">  <strong>de timp</strong> (timpul alocat proiectului s-a încheiat)	</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<strong>Feluri de terminare</strong> a unui proiect:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>Extinctie</em> (proiectul se termină prin succes sau eșec și, pe viitor, nu se va mai lucra la proiect)</div>
+</li>
+<li class="level1"><div class="li"> <em>Terminare prin adiție</em> (proiectul se termină cu succes și, pe viitor, echipa care a dezvoltat proiectul se va ocupa de mentenanța produsului)</div>
+</li>
+<li class="level1"><div class="li"> <em>Terminare prin integrare</em> (proiectul se termină cu succes și resursele sunt reintegrate în alte proiecte ale companiei – modul cel mai frecvent)</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="checklist-ul_terminarii_proiectului">Checklist-ul terminării proiectului</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> cuprinde <em>activitățile rămase</em> din cadrul proiectului</div>
+</li>
+<li class="level1"><div class="li"> cuprinde <em>activitățile colaterale</em> ce trebuie realizate pentru a încheia proiectul în conformitate cu procedurile actuale:</div>
+<ul>
+<li class="level2"><div class="li">  completarea și distribuirea rapoartelor de performanță</div>
+</li>
+<li class="level2"><div class="li">  completarea și distribuirea documentației sistemului </div>
+</li>
+<li class="level2"><div class="li">  completarea auditurilor de calitate</div>
+</li>
+<li class="level2"><div class="li">  completarea auditurilor de vânzare</div>
+</li>
+<li class="level2"><div class="li">  revizia sistemului împreună cu help desk</div>
+</li>
+<li class="level2"><div class="li">  întâlnirea cu staff-ul operațional care urmează să preia software-ul (în vederea mentenanței)</div>
+</li>
+<li class="level2"><div class="li">  împlinirea cerințelor de training ale staff-ului operațional</div>
+</li>
+<li class="level2"><div class="li">  primirea sign-off-ului de la staff-ul operațional</div>
+</li>
+<li class="level2"><div class="li">  oferirea detaliilor despre performanța membrilor proiectului (evaluarea echipei și evaluările individuale ale membrilor și a PM-ului)</div>
+</li>
+<li class="level2"><div class="li">  primirea sign-off-ului de acceptare de la client și acceptarea formală a tuturor livrabilelor proiectului.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+În cazul în care se folosește un sistem de bug/issue tracking, trebuie ca <em>toate issue-urile să fie rezolvate</em> înainte de finalizarea proiectului chiar dacă ele nu au fost incluse în specificații. 
+</p>
+
+<p>
+În cazul în care nu se poate acest lucru, cei care predau proiectul trebuie să se asigure că problemele rămase deschise sunt de prioritate scăzută și nu au un impact major asupra funcționalității. 
+</p>
+
+</div>
+
+<h4 id="procesul_de_terminare">Procesul de terminare</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> se decide terminarea proiectului</div>
+</li>
+<li class="level1"><div class="li"> se obțin aprobările necesare (de la clienți, sponsori)</div>
+</li>
+<li class="level1"><div class="li"> se comunică decizia părților interesate</div>
+</li>
+<li class="level1"><div class="li"> se realizează activitățile rămase din proiect și cele colaterale</div>
+</li>
+<li class="level1"><div class="li"> se face post-performance analysis</div>
+</li>
+<li class="level1"><div class="li"> se publică raportul final</div>
+</li>
+<li class="level1"><div class="li"> se sărbătorește terminarea proiectului</div>
+</li>
+<li class="level1"><div class="li"> se reasignează resursele (persoane și echipamente)</div>
+</li>
+<li class="level1"><div class="li"> se efectuează închiderea financiară și administrativă</div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="post-performance_analysis_ppa">Post-Performance Analysis (PPA)</h5>
+<div class="level5">
+
+<p>
+Încheierea unui proiect nu presupune numai livrarea produsului, ci și <strong>oportunitatea de a învăța</strong> din această experiență pentru îmbunătățirea contribuțiilor la proiectele viitoare.<br>
+<br>
+
+<strong>Recomandări</strong>:
+</p>
+<ul>
+<li class="level1"><div class="li">  analiza finală a proiectului să se bazeze pe <em>metrici</em> (așa se pot cuantifica acurat rezultatele); </div>
+</li>
+<li class="level3"><div class="li">  exemplu de metrici: </div>
+<ol>
+<li class="level4"><div class="li">  <strong>calitatea produsului</strong>:</div>
+<ol>
+<li class="level5"><div class="li"> <em>Defects per KLOC</em> (Kilo Line Of Code): numărul de buguri per KLOC, unde <strong>KLOC</strong> este unitatea de măsură pentru codul produsului</div>
+</li>
+<li class="level5"><div class="li"> <em>MTTC</em> (Mean Time To Change): cât timp este necesar pentru a localiza eroarea, a proiecta repararea, a o implementa si testa</div>
+</li>
+<li class="level5"><div class="li">  <em>threat probability</em>: probabilitatea atacurilor ce exploatează vulnerabilitățile produsului pe o perioadă de timp</div>
+</li>
+<li class="level5"><div class="li"> <em>security probability</em>: probabilitatea eliminării vulnerabilităților pe o perioadă de timp</div>
+</li>
+</ol>
+</li>
+<li class="level4"><div class="li">  <strong>calitatea activităților QA</strong>:</div>
+<ol>
+<li class="level5"><div class="li"> <em>Test Coverage</em>: numărul de unități testate (KLOC/FP) / dimensiunea sistemului, unde <strong>FP</strong> (function point) este unitate de măsură pentru codul produsului din perspectiva funcționalității de business oferite </div>
+</li>
+<li class="level5"><div class="li"> <em>Number of tests per unit size</em>: numărul de teste per KLOC/FP </div>
+</li>
+<li class="level5"><div class="li"> <em>Cost to locate defect</em>: costul de testare / numărul de defecte detectate </div>
+</li>
+</ol>
+</li>
+<li class="level4"><div class="li">  <strong><em>Quality of Testing</em></strong>: E / ( E + D ), unde E este numărul de erori identificate înainte de livrarea produsului, D numărul de erori identificate după livrare</div>
+<ol>
+<li class="level5"><div class="li"> <em>System complaints</em>: numărul de plângeri din partea clienților / numărul de plângeri rezolvate</div>
+</li>
+<li class="level5"><div class="li"> <em>Test Planning Productivity</em>: numărul de teste proiectate / efortul pentru proiectarea și documentarea testelor</div>
+</li>
+<li class="level5"><div class="li"> <em>Test Execution Productivity</em>: numărul de cicluri de testare executate / efortul de testare</div>
+</li>
+<li class="level5"><div class="li"> <em>Test efficiency</em>: numărul de teste solicitate / numărul erorilor sistemului</div>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> să se determine <em>cauzele</em> ce au condus la valorile finale ale metricilor</div>
+</li>
+<li class="level1"><div class="li"> să se rețină și să se înțeleagă aceste cauze, să se determine ce <em>posibilități</em> ar fi existat/ar exista pentru a evita producerea acestor cauze, ce posibilități sunt de stimulare a producerii a acestor cauze</div>
+</li>
+<li class="level1"><div class="li"> să se colecteze <em>valorile reutilizabile</em> care au fost produse în cadrul proiectului (proceduri, checklisturi, guidelines) și să se facă publice</div>
+</li>
+</ul>
+
+<p>
+<strong>PPA</strong>:
+</p>
+<ul>
+<li class="level1"><div class="li"> este <em>analiza situației finale</em> a proiectului în vederea concluzionării asupra factorilor de succes și a modalităților de stimulare a lor, precum și asupra factorilor de insucces și a modalităților de prevenire, rezolvare a efectelor lor</div>
+</li>
+<li class="level1"><div class="li"> este <em>analiza ce stimulează procesul de învățare</em> din experiența proiectului</div>
+</li>
+<li class="level1"><div class="li"> este recomandat să se realizeze periodic (imediat după milestone-uri) pentru a putea folosi concluziile analizei chiar in faza următoare </div>
+</li>
+</ul>
+
+<p>
+<strong>Procesul PPA</strong> are următorii pași:
+</p>
+<ol>
+<li class="level1"><div class="li"> invitarea echipei la analiză (propunând ca fiecare membru să reflecteze asupra factorilor de succes/insucces și să vină cu propuneri de îmbunătățire – se trimite un chestionar de analiză)</div>
+</li>
+<li class="level1"><div class="li"> colectarea individuală a feedback-ului fiecărei persoane implicate în proiect (individual pentru a înțelege întreaga panoramă a proiectului)</div>
+</li>
+<li class="level1"><div class="li"> realizarea unei întâlniri a echipei în vederea concluzionării asupra: ce și cum s-a întâmplat, în ce moduri ar fi putut fi prevenite/soluționate problemele?</div>
+</li>
+<li class="level1"><div class="li"> publicarea și arhivarea sumarului PPA.</div>
+</li>
+</ol>
+
+<p>
+În general, se folosește <strong>un chestionar</strong> pentru colectarea informațiilor. De obicei, acesta are conținut diferit între team leaderi și team memberi.<br>
+<br>
+
+Câteva întrebări de chestionar sunt cele de mai jos:
+</p>
+<ol>
+<li class="level1"><div class="li"> Identificați lucrurile care au mers bine în cadrul acestui proiect.</div>
+</li>
+<li class="level1"><div class="li"> Identificați lucrurile care au mers prost în cadrul acestui proiect.</div>
+</li>
+<li class="level1"><div class="li"> Ce evenimente neprevăzute au afectat pozitiv sau negativ desfășurarea proiectului?</div>
+</li>
+<li class="level1"><div class="li"> În cadrul acestui proiect, ce lucruri ați face diferit dacă ar fi repornit?</div>
+</li>
+<li class="level1"><div class="li"> Descrie un lucru pe care tu l-ai fi putut realiza personal pentru a îmbunătăți calitatea produsului obținut din cadrul acestui proiect.</div>
+</li>
+<li class="level1"><div class="li"> Ai fost informat despre ceea ce se așteaptă de la tine în cadrul acestui proiect?</div>
+</li>
+<li class="level1"><div class="li"> Au fost rolurile membrilor echipei definite clar?</div>
+</li>
+<li class="level1"><div class="li"> Echipa a făcut tot ce se putea face pentru a duce la bun sfârșit acest proiect?</div>
+</li>
+<li class="level1"><div class="li"> Cum s-a comportat echipa în ansamblul său?</div>
+</li>
+<li class="level1"><div class="li"> Care a fost componenta cea mai satisfăcătoare din cadrul proiectului?</div>
+</li>
+</ol>
+
+<p>
+Un exemplu complet de chestionar găsiți <a href="http://michaelgreer.biz/?p=161" class="urlextern" title="http://michaelgreer.biz/?p=161" rel="nofollow">aici</a>
+</p>
+
+</div>
+
+<h2 class="sectionedit11" id="exercitii_50_min">Exerciții (50 min)</h2>
+<div class="level2">
+
+<p>
+Raspundeti la urmatoarele intrebari:
+</p>
+<ol>
+<li class="level1"><div class="li"> Se da urmatorul patch: <a href="https://curl.haxx.se/CVE-2016-8616.patch" class="urlextern" title="https://curl.haxx.se/CVE-2016-8616.patch" rel="nofollow">patch</a>. Precizati:</div>
+<ul>
+<li class="level2"><div class="li"> cate modificari s-au facut?</div>
+</li>
+<li class="level2"><div class="li"> cate fisiere au fost modificate?</div>
+</li>
+<li class="level2"><div class="li"> ce bug ar putea rezolva acest patch?</div>
+</li>
+<li class="level2"><div class="li"> cum ati testa acest fix?</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Ganditi-va la platforma vmchecker.</div>
+<ul>
+<li class="level2"><div class="li"> ce fel de testare face: Boundary testing / Black Box Testing?  </div>
+</li>
+<li class="level2"><div class="li"> argumentati si exemplificati</div>
+</li>
+<li class="level2"><div class="li"> Dar dintre urmatoarele: Stubs / Mockups / Regression testing?</div>
+</li>
+<li class="level2"><div class="li"> argumentati si exemplificati</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Ce fel de testare este ilustrata <a href="http://i.imgur.com/KHaCdxA.png" class="urlextern" title="http://i.imgur.com/KHaCdxA.png" rel="nofollow">aici</a> ?</div>
+</li>
+<li class="level1"><div class="li"> <strong>[Bonus]</strong> De unde vine denumirea de bug?</div>
+</li>
+</ol>
+
+<p>
+<strong>Nota</strong>: fiecare subpunct valoareaza un punct, se acorda un punct pentru prezenta. Punctajul total aferent laboratorului curent este de <strong>11p</strong>.
+</p>
+<ol>
+<li class="level1"><div class="li"> Descrieți sumar conținutul unui SQAP pentru proiectul vostru.</div>
+<ul>
+<li class="level2"><div class="li"> Parcurgeți secțiunea <a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#sqap_software_quality_assurance_plan" class="urlextern" title="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#sqap_software_quality_assurance_plan" rel="nofollow">Software Quality Assurance Plan</a></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Pregătiți un checklist pentru terminarea proiectului vostru. Argumentați!</div>
+<ul>
+<li class="level2"><div class="li"> Parcurgeți secțiunea Terminarea unui proiect</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Răspundeți la întrebările de la procesul PPA pentru proiectul vostru.</div>
+<ul>
+<li class="level2"><div class="li"> Parcurgeți secțiunea Post-Performance Analysis.</div>
+</li>
+</ul>
+</li>
+</ol>
+
+</div>
+
+<h3 class="sectionedit12" id="bibliografie">Bibliografie</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.sqatester.com/methodology/PositiveandNegativeTesting.htm" class="urlextern" title="http://www.sqatester.com/methodology/PositiveandNegativeTesting.htm" rel="nofollow">http://www.sqatester.com/methodology/PositiveandNegativeTesting.htm</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.opensourcetesting.org/testmgt.php" class="urlextern" title="http://www.opensourcetesting.org/testmgt.php" rel="nofollow">http://www.opensourcetesting.org/testmgt.php</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.sqatester.com/documentation/testcasesmpl.htm" class="urlextern" title="http://www.sqatester.com/documentation/testcasesmpl.htm" rel="nofollow">http://www.sqatester.com/documentation/testcasesmpl.htm</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.computerhistory.org/tdih/September/9/" class="urlextern" title="http://www.computerhistory.org/tdih/September/9/" rel="nofollow">http://www.computerhistory.org/tdih/September/9/</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit13" id="lucru_la_proiect_50_min">Lucru la proiect (50 min)</h2>
+<div class="level2">
+
+<p>
+Stabiliti ce mai aveti de facut pentru finalizarea proiectelor.
+</p>
+
+</div>
+
+        </div>
+        <div class="right_sidebar">
+          <form action="https://ocw.cs.pub.ro/courses/start" accept-charset="utf-8" class="search" id="dw__search" method="get" wtx-context="C7D86DB3-E7E1-4A53-8D73-5F427570DBEE"><div class="no"><input type="hidden" name="do" value="search" wtx-context="0CF2FD43-4957-49D7-B74B-015033012918"><input type="text" id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]" wtx-context="8EDB22DA-DA8C-4317-8BCE-56B58C4C5871"><input type="submit" value="Search" class="button" title="Search" wtx-context="F58588EF-AC07-4E0A-97DC-50F8BF8FDD00"><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>          <div class="namespace_sidebar sidebar_box">
+
+
+
+<div><div id="nojs_indexmenu_19847535675e2eefd29c198" data-jsajax="%26skipfile%3D%252B/mps%253A%2528sidebar%257Cindex%2529/" class="indexmenu_nojs">
+
+<ul class="idx">
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/anunturi" class="wikilink1" title="mps:anunturi">Anunțuri</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/calendar" class="wikilink1" title="mps:calendar">Calendar</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/catalog" class="wikilink1" title="mps:catalog">Catalog</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/need-to-know" class="wikilink1" title="mps:need-to-know">MPS Need to Know</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/reguli" class="wikilink1" title="mps:reguli">Reguli generale și notare</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/semigrupe" class="wikilink1" title="mps:semigrupe">Semigrupe de laborator</a></div></li>
+</ul>
+</div></div>
+
+<h1 class="sectionedit1" id="resurse">Resurse</h1>
+<div class="level1">
+
+<div><div id="nojs_indexmenu_9453046575e2eefd29e103" data-jsajax="%26skipfile%3D%253D/home/" class="indexmenu_nojs">
+
+<ul class="idx">
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/resurse/acces-direct" class="wikilink1" title="mps:resurse:acces-direct">Acces direct</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/resurse/feed" class="wikilink1" title="mps:resurse:feed">Feed RSS</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/resurse/github" class="wikilink1" title="mps:resurse:github">Git și GitHub</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/resurse/sala" class="wikilink1" title="mps:resurse:sala">Sală de laborator</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/resurse/wiki-old" class="wikilink1" title="mps:resurse:wiki-old">Wiki-uri anterioare</a></div></li>
+</ul>
+</div></div>
+
+
+
+</div>
+<!-- EDIT1 SECTION "Resurse" [116-259] -->
+<h1 class="sectionedit2" id="laboratoare">Laboratoare</h1>
+<div class="level1">
+
+<div><div id="nojs_indexmenu_7771979045e2eefd29ef9e" data-jsajax="%26skipfile%3D%253D/home/" class="indexmenu_nojs">
+
+<ul class="idx">
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-01" class="wikilink1" title="mps:laboratoare:laborator-01">Laborator 1 - Introducere</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-02" class="wikilink1" title="mps:laboratoare:laborator-02">Laborator 2 - Rolurile în echipă. Redactarea specificațiilor de proiect.</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-03" class="wikilink1" title="mps:laboratoare:laborator-03">Laborator 3 - Mijloace de organizare a proiectului. Controlul versiunii</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-04" class="wikilink1" title="mps:laboratoare:laborator-04">Laborator 4 - Utilitare pentru managementul și dezvoltarea proiectelor software</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-05" class="wikilink1" title="mps:laboratoare:laborator-05">Laborator 5 - Comunicarea în cadrul proiectului</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-06" class="wikilink1" title="mps:laboratoare:laborator-06">Laborator 6 - Monitorizarea, evaluarea și controlul evoluției proiectului</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-07" class="wikilink1" title="mps:laboratoare:laborator-07">Laborator 7 - Documentație. Patterns. Modele de dezvoltare</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-08" class="wikilink1" title="mps:laboratoare:laborator-08">Laborator 8 - Integrare</a></div></li>
+<li class="level1"><div class="li"><span class="curid"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09" class="wikilink1" title="mps:laboratoare:laborator-09">Laborator 9 - Testarea si asigurarea calitatii unui proiect</a></span></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-10" class="wikilink1" title="mps:laboratoare:laborator-10">Laborator 10 - Conducere, motivare, inteligență emoțională</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-11" class="wikilink1" title="mps:laboratoare:laborator-11">Laborator 11 - Tehnici de prezentare</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-12" class="wikilink1" title="mps:laboratoare:laborator-12">Laborator 12 - Laborator final</a></div></li>
+</ul>
+</div></div>
+
+</div>
+<!-- EDIT2 SECTION "Laboratoare" [260-336] -->
+<h1 class="sectionedit3" id="proiect">Proiect</h1>
+<div class="level1">
+
+<div><div id="nojs_indexmenu_12959076875e2eefd29ff21" data-jsajax="%26skipfile%3D%253D/home%257Cimpartire-echipe/" class="indexmenu_nojs">
+
+<ul class="idx">
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/proiect/proiect-1" class="wikilink1" title="mps:proiect:proiect-1">Proiectul 1</a></div></li>
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/proiect/proiect-2" class="wikilink1" title="mps:proiect:proiect-2">Proiectul 2</a></div></li>
+</ul>
+</div></div>
+
+</div>
+<!-- EDIT3 SECTION "Proiect" [337-] -->
+</div>
+<div class="toc_sidebar sidebar_box">
+<!-- TOC START -->
+<div id="sb__right__dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#laborator_9_-_testarea_si_asigurarea_calitatii_unui_proiect">Laborator 9 - Testarea si asigurarea calitatii unui proiect</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#termeni">Termeni</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#aplicatii">Aplicații</a></div>
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#github">GitHub</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#redmine">Redmine</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#bugzilla">Bugzilla</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#trac">Trac</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#debian_bug_tracking_software">Debian bug tracking software</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#launchpad">Launchpad</a></div></li>
+</ul>
+</li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#patch-uri">Patch-uri</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#creare_patch">Creare patch</a></div>
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#diff">diff</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#git_format-patch">git format-patch</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#utilizare_patch">Utilizare patch</a></div></li>
+</ul>
+</li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#test_cases">Test Cases</a></div>
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#black_box_testing">Black Box Testing</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#boundary_testing">Boundary testing</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#link-uri_utile">Link-uri utile</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#unit_testing">Unit testing</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#regression_testing">Regression testing</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#fault_injection">Fault injection</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#hwifi_hardware_implemented_fault_injection">HWIFI(Hardware Implemented Fault Injection)</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#swifi_software_implemented_fault_injection">SWIFI(Software Implemented Fault Injection)</a></div></li>
+</ul>
+</li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#platforme_de_testare">Platforme de testare</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#testarea_interfetelor_grafice">Testarea interfețelor grafice</a></div>
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#autoit">AutoIt</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#abbot">Abbot</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#code_coverage">Code coverage</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#code_profiling">Code profiling</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#software_quality_assurance_sqa">Software Quality Assurance (SQA)</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#domeniul_qa">Domeniul QA</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#activitati_sqa">Activități SQA</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#sqap_software_quality_assurance_plan">SQAP (Software Quality Assurance Plan)</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#terminarea_unui_proiect">Terminarea unui proiect</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#contexte_de_terminare">Contexte de terminare</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#checklist-ul_terminarii_proiectului">Checklist-ul terminării proiectului</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#procesul_de_terminare">Procesul de terminare</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#exercitii_50_min">Exerciții (50 min)</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#bibliografie">Bibliografie</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#lucru_la_proiect_50_min">Lucru la proiect (50 min)</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+</div>
+        </div>
+      
+    
+      <div class="stylefoot">
+        <div class="meta">
+          <div class="user">
+                    </div>
+          <div class="doc">
+          mps/laboratoare/laborator-09.txt · Last modified: 2019/11/20 10:46 by iulia.stanica          </div>
+        </div>
+      </div>
+
+    <div class="clearer"></div>
+
+    
+                <div class="bar" id="bar__bottom">
+      <div class="bar-left">
+        <a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09?do=revisions" class="action revs" accesskey="o" rel="nofollow" title="Old revisions [O]">Old revisions</a>      </div>
+      <div class="bar-right">
+        <a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09?do=media&amp;ns=mps%3Alaboratoare" class="action media" rel="nofollow" title="Media Manager">Media Manager</a><a href="https://ocw.cs.pub.ro/courses/mps/laboratoare/laborator-09#dokuwiki__top" class="action top" accesskey="t" rel="nofollow" title="Back to top [T]">Back to top</a>      </div>
+    </div>
+    <div class="clearer"></div>
+            
+    <div align="center" class="footerinc">
+  <div class="license"><a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="./Laborator 9 - Testarea si asigurarea calitatii unui proiect [CS Open CourseWare]_files/cc-by-sa.png" alt="CC Attribution-Share Alike 3.0 Unported"></a></div>
+  <a target="_blank" href="http://www.chimeric.de/" title="www.chimeric.de"><img src="./Laborator 9 - Testarea si asigurarea calitatii unui proiect [CS Open CourseWare]_files/button-chimeric-de.png" width="80" height="15" alt="www.chimeric.de" border="0"></a>
+
+  <a target="_blank" href="http://jigsaw.w3.org/css-validator/check/referer" title="Valid CSS"><img src="./Laborator 9 - Testarea si asigurarea calitatii unui proiect [CS Open CourseWare]_files/button-css.png" width="80" height="15" alt="Valid CSS" border="0"></a>
+
+  <a target="_blank" href="http://wiki.splitbrain.org/wiki:dokuwiki" title="Driven by DokuWiki"><img src="./Laborator 9 - Testarea si asigurarea calitatii unui proiect [CS Open CourseWare]_files/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" border="0"></a>
+
+  <a target="_blank" href="http://www.firefox-browser.de/" title="do yourself a favour and use a real browser - get firefox"><img src="./Laborator 9 - Testarea si asigurarea calitatii unui proiect [CS Open CourseWare]_files/button-firefox.png" width="80" height="15" alt="do yourself a favour and use a real browser - get firefox!!" border="0"></a>
+  
+  <a target="_blank" href="https://ocw.cs.pub.ro/courses/feed.php" title="Recent changes RSS feed"><img src="./Laborator 9 - Testarea si asigurarea calitatii unui proiect [CS Open CourseWare]_files/button-rss.png" width="80" height="15" alt="Recent changes RSS feed" border="0"></a>
+
+  <a target="_blank" href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0"><img src="./Laborator 9 - Testarea si asigurarea calitatii unui proiect [CS Open CourseWare]_files/button-xhtml.png" width="80" height="15" alt="Valid XHTML 1.0" border="0"></a>
+</div>
+
+  </div>
+</div>
+
+<div class="no"><img src="./Laborator 9 - Testarea si asigurarea calitatii unui proiect [CS Open CourseWare]_files/indexer.php" width="2" height="1" alt=""></div>
+
+
+</body></html>
